@@ -1,0 +1,332 @@
+/* Table of Contents
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+	
+/* #Site Styles
+================================================== */
+
+
+/* @group Navigation */
+
+#navigation {
+	margin-bottom: 20px;
+	clear: both;
+}
+
+#navigation ul,
+#navigation ul li {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+#navigation ul li:hover a,
+#navigation ul li a:hover {
+	color:#4b637d;
+	position: relative;
+	behavior: url("./wp-content/themes/skeleton/PIE.php");
+}
+
+#navigation ul li ul.children li { background: #4b637d; }
+#navigation ul li ul.children li a {padding:0;}
+#navigation ul li ul.children {text-align: left;}
+#navigation ul li ul.children li:hover a,
+#navigation ul li ul.children li a,
+#navigation ul li ul.children li a:hover {
+	color:#f7c53e;
+}
+
+/* @end */
+
+#footer {
+	clear: both;
+	padding: 10px 0 10px 0;
+}
+
+#credits {
+	text-align: center;
+}
+
+/* #Page Styles
+================================================== */
+
+/* Layout Shortcodes */
+.full-width {width:960px; height:auto; overflow:hidden}
+
+.one_half { width: 48%; }
+.one_third { width: 30.66%; }
+.two_thirds { width: 65.33%; }
+.one_fourth { width: 22%; }
+.three_fourths { width: 74%; }
+.one_fifth { width: 16.8%; }
+.two_fifth { width: 37.6%; }
+.three_fifth { width: 58.4%; }
+.four_fifth { width: 67.2%; }
+.one_sixth { width: 13.33%; }
+.five_sixth { width: 82.67%; }
+
+.one_half,
+.one_third,
+.two_thirds,
+.three_fourths,
+.one_fourth,
+.one_fifth,
+.two_fifth,
+.three_fifth,
+.four_fifth,
+.one_sixth,
+.five_sixth {
+	position: relative;
+	margin-right: 4%;
+	margin-bottom: 20px;
+	float: left;
+}
+
+
+.last {margin-right:0 !important;}
+
+
+/* #Media Queries
+================================================== */
+	
+	/* iPad Portrait/Browser */
+	@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+	#navigation ul {border-radius:0px;}
+	/*#navigation ul li a {font-size: .9em;padding: 10px 15px;}*/
+	#navigation ul {min-width: 700px;}
+	#sidebar .widget-container {margin-left: 0px;}
+	.resize {display: none;}
+	#respond textarea {width:auto;}	
+	/*#navigation ul li a:hover, #navigation ul li:hover a {
+			background: #f7c53e;
+		}
+	#navigation ul li a { padding: 12px 10px 0; }
+		#navigation ul li ul.children li { background: #4b637d; }
+		#navigation ul li ul.children li a {padding:0;}
+
+		#navigation ul li ul.children li:hover a,
+		#navigation ul li ul.children li a,
+		#navigation ul li ul.children li a:hover {
+			color:#f7c53e;
+		}*/
+	/* jigoshop styles */
+	#header .site-desc.text {font-size: 1.25em;}
+	}
+	
+	
+	/* Mobile/Browser */
+	@media only screen and (max-width: 767px) {
+
+	.support-serv-img{
+			width:130px;
+			height:inherit;
+			border-right:1px solid black;
+			float:left;
+		}
+
+		.support-serv-row {
+			height:200px;
+			border-bottom: 1px solid black;
+		}
+
+		.support-serv-row-last{
+			height:200px;
+			border:0;
+		}
+
+		.support-serv-body {
+			width:277px;
+		}
+
+		.support-serv-body span {
+			font-size:12px;
+		}
+	#navigation ul li a:hover, #navigation ul li:hover a {
+			background: #f7c53e;
+		}
+	#navigation ul li {display:inline-block; text-align:center; width:100%;}
+	#navigation ul li a {display: block;}
+
+	#navigation ul ul.children {display: none;}
+
+	#navigation .current_page_item{
+		background: #f7c53e;
+	}
+
+	.login_box{
+			background: #f7c53e;
+			/*max-width:283px;*/
+			padding:10px 72px 5px 55px;
+		}
+
+	#navigation .current_page_item a{
+		color:#4b637c;
+	}
+
+	#wrap {}
+	#header .site-desc.text {font-size: 1.25em;}
+	#navigation {
+		/*margin: 10px 0px;*/
+		background-color: #4b637d;
+	}
+	
+	#navigation ul,
+	#navigation ul li,
+	#navigation ul li a {
+	float: none;
+	background: transparent;
+	border: none;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+	behavior:none;
+	}
+	
+	#navigation ul li a,
+	#navigation ul li.active a
+	{
+	border: none;
+	padding: 2px 0 2px 5px;
+	line-height: 150%;
+	background: transparent;
+	background-image: none;
+	}
+	
+	/* Initial reset and hide sublevels in mobile view */
+	
+	#navigation ul.sub-menu,
+	#navigation ul.sub-menu li,
+	#navigation ul.sub-menu li:hover,
+	#navigation ul.sub-menu li a,
+	#navigation ul.sub-menu li a:hover
+	 {
+		display: none;
+		position: relative;
+		left: 0px;
+		line-height: 100%;
+		background: none;
+		border: none;
+		border-style: none;
+		box-shadow:none;
+		padding: 0;
+		margin: 0;
+		height: auto;
+		background-image: none;
+	}
+	
+	/* Declare new padding for submenu items */
+
+	#navigation ul.sub-menu li a,
+	#navigation ul.sub-menu li a:hover {
+		padding: 4px 0px 4px 10px;
+	}
+	
+	/* Show on hover */
+	
+	#navigation li:hover ul.sub-menu,
+	#navigation li:hover ul.sub-menu li,
+	#navigation li:hover ul.sub-menu li a {
+		display: inline-block;
+	}
+	#respond textarea {width:300px;}	
+
+
+	
+	#wrap .products li,.products li.first,.products li.last {
+ 	float: left;
+ 	clear: both;
+	margin: 20px 0px 20px 0px;
+	width: 100%;
+	}
+	#breadcrumb {display: none;}
+
+	#sidebar .widget-container {margin-left: 0px;}
+	.full-width,
+	.one_half,
+	.one_third,
+	.two_thirds,
+	.three_fourths,
+	.one_fourth,
+	.one_fifth,
+	.two_fifth,
+	.three_fifth,
+	.four_fifth,
+	.one_sixth,
+	.five_sixth {width: 100%;}
+	.resize {display: none;}
+
+	}
+
+	@media only screen and (max-width: 479px) {
+		#navigation ul li{
+			width:100%;
+			text-align:left;
+		}
+		#navigation .current_page_item{
+	  		background: #f7c53e;
+			background-position:top right;
+		}
+		#navigation .current_page_item a{
+			color:#4b637c;
+		}
+		#navigation ul li a:hover{
+			background: #f7c53e;
+		}
+		.support-serv-img{
+			width:300px;
+			text-align:center;
+			height:120px;
+			border: 0;
+		}
+		.support-serv-row {
+			height:300px;
+			border-bottom: 1px solid black;
+		}
+		.support-serv-row-last{
+			height:300px;
+			border:0;
+		}
+		.support-serv-body {
+			width:280px;
+			padding-right:10px;
+		}
+		.support-serv-img img {width:117px;}
+	}
+	
+	/* Mobile Landscape/Browser */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+	
+	/* Anything smaller than standard 960 */
+	@media only screen and (max-width: 959px) {}
+	
+	/* iPad Portrait Only */
+	@media only screen and (min-width: 768px) and (max-width: 991px) and (max-device-width: 1000px) {}
+	
+	/* Mobile Only */
+	@media only screen and (max-width: 767px) and (max-device-width: 1000px) {}
+	
+	/* Mobile Landscape Only */
+	@media only screen and (min-width: 480px) and (max-width: 767px) and (max-device-width: 1000px) {}
+	
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file 
+		Just create a "fonts" folder at the root, 
+		copy your FontName into code below and remove
+		comment brackets */
+		
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/

@@ -1,0 +1,62 @@
+   client_max_body_size 3072M;
+
+   location ~ ^/([_0-9a-zA-Z-]+/)?wp-admin/$ {
+        rewrite ^/([_0-9a-zA-Z-]+/)?wp-admin/$ /wp-admin/index.php last;
+   }
+
+   location ~ ^/([_0-9a-zA-Z-]+/)?wp-admin/network/$ {
+        rewrite ^/([_0-9a-zA-Z-]+/)?wp-admin/network/$ /wp-admin/network/index.php last;
+   }
+
+   #location ~ ^/([_0-9a-zA-Z-]+/)?files/(.+)$ {
+   #     rewrite ^/([_0-9a-zA-Z-]+/)?files/(.+)$ /wp-includes/ms-files.php?file=$2 last;
+   #}
+
+   location ~ ^/([_0-9a-zA-Z-]+/)?wp-content/plugins/bwp-minify/min/$ {
+        rewrite ^/([_0-9a-zA-Z-]+/)wp-content/plugins/bwp-minify/min/index.php last;
+   }
+
+   # Add trailing slash to */wp-admin requests.
+    rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+
+    if (!-e $request_filename) {
+        rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+        rewrite ^(/[^/]+)?(/wp-.*) $2 last; #for /wp-admin/filename.php
+        rewrite ^(/[^/]+)?(/.*\.php) $2 last;
+        rewrite ^/[_0-9a-zA-Z-]+(/wp-.*) $1 last;
+        rewrite ^/[_0-9a-zA-Z-]+.*(/wp-admin/.*\.php)$ $1 last;
+        rewrite ^/[_0-9a-zA-Z-]+(/.*\.php)$ $1 last;
+    }
+
+    location ~ /.well-known {
+       allow all;
+    }
+
+    location ~ \.php {
+      root       /var/www/html;
+      if ( $request_uri ~ ^/wp-login.php ) { gzip off; }
+      if ( $request_uri ~ ^/wp-signup.php ) { gzip off; }
+      if ( $request_uri ~ ^/\?s= ) { gzip off; }
+      if ( $request_uri ~ cerror= ) { gzip off; }
+      if ( $request_uri ~ ajaxCalendar= ) { gzip off; }
+      if ( $request_uri ~ ^/emergency ) { gzip off; }
+      if ( $request_uri ~ ^/events-list ) { gzip off; }
+      if ( $request_uri ~ ^/registration ) { gzip off; }
+      fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+      fastcgi_pass  php_fpm_local;
+      fastcgi_index index.php;
+      include fastcgi_params;
+      fastcgi_param HTTPS on;
+      fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+      fastcgi_read_timeout 300;
+      fastcgi_buffer_size 128k;
+      fastcgi_buffers 16 256k;
+      set $path_info $fastcgi_path_info;
+      try_files $fastcgi_script_name =404;
+    }
+
+   location @rewrite {
+       rewrite ^ /index.php?&args;
+   }
+
+   add_header X-Frame-Options "SAMEORIGIN";

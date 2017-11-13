@@ -1,0 +1,9 @@
+{{$env_id := env "APP_ENVIRONMENT" -}}
+;FPM OVERRIDE
+
+[PHP]
+auto_prepend_file=/etc/php/env.php
+{{if key (printf "service_app_platform/%s/cache/node" $env_id) -}}
+session.save_handler = redis
+session.save_path    = "tcp://{{key (printf "service_app_platform/%s/cache/node" $env_id)}}"
+{{end -}}

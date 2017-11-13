@@ -1,0 +1,210 @@
+# Copyright (C) 2010 Contact Form 7 BWP reCAPTCHA Extension
+# This file is distributed under the same license as the Contact Form 7 BWP reCAPTCHA Extension package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7 BWP reCAPTCHA Extension 0.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/contact-form-7-bwp-recaptcha-"
+"extension\n"
+"POT-Creation-Date: 2011-12-17 23:58:51+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/settings.php:28 includes/CF7bwpCAPT.class.php:95
+msgid "CF7 BWP reCAPTCHA Extension Options"
+msgstr ""
+
+#: includes/settings.php:32
+msgid ""
+"Contact form 7 better wordpress reCAPTCHA extension let's you add a "
+"reCAPTCHA to your contact form. Just configure here the look&feel you want "
+"for the reCAPTCHA and go to your Contact form 7 configuration page to add a "
+"reCAPTCHA tag to your form."
+msgstr ""
+
+#: includes/settings.php:40
+msgid "Save Options"
+msgstr ""
+
+#: includes/settings.php:40
+msgid "Save Changes"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:95
+msgid "CF7 Options"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:118
+msgid "Theme Options"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:124
+msgid "Theme Preselection"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:131
+msgid "Own Theme (<i>if selected</i>)"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:139
+msgid "Language Options"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:145
+msgid "Language Preselection"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:152
+msgid "Own Language (<i>if selected</i>)"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:163
+msgid ""
+"Here you can set which options to use for the themes option of the BWP "
+"reCAPTCHA forms in the Contact Form 7 forms."
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:172 includes/CF7bwpCAPT.class.php:196
+msgid "Red"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:173 includes/CF7bwpCAPT.class.php:197
+msgid "White"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:174 includes/CF7bwpCAPT.class.php:198
+msgid "Black Glass"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:175 includes/CF7bwpCAPT.class.php:199
+msgid "Clean"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:178 includes/CF7bwpCAPT.class.php:236
+msgid "currently"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:183
+msgid "BWP reCAPTCHA Theme"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:184
+msgid "Own Theme"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:184 includes/CF7bwpCAPT.class.php:241
+msgid "select below"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:202
+msgid "Theme"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:217
+msgid ""
+"Here you can set which options to use for the language option of the BWP "
+"reCAPTCHA forms in the Contact Form 7 forms."
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:226 includes/CF7bwpCAPT.class.php:253
+msgid "English"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:227 includes/CF7bwpCAPT.class.php:254
+msgid "Dutch"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:228 includes/CF7bwpCAPT.class.php:255
+msgid "French"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:229 includes/CF7bwpCAPT.class.php:256
+msgid "German"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:230 includes/CF7bwpCAPT.class.php:257
+msgid "Portuguese"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:231 includes/CF7bwpCAPT.class.php:258
+msgid "Russian"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:232 includes/CF7bwpCAPT.class.php:259
+msgid "Spanish"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:233 includes/CF7bwpCAPT.class.php:260
+msgid "Turkish"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:240
+msgid "BWP reCAPTCHA Language"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:241
+msgid "Own Language"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:263
+msgid "Language"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:458
+msgid "Your comment was identified as spam, please complete the CAPTCHA below:"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:471
+msgid ""
+"To use reCAPTCHA you must get an API key from <a href='https://www.google."
+"com/recaptcha/admin/create'>https://www.google.com/recaptcha/admin/create</a>"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:503
+msgid "Name"
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:512
+msgid "Copy this code and paste it into the form left."
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:576 includes/CF7bwpCAPT.class.php:590
+msgid "You are using Contact Form 7 Better WordPress reCAPTCHA Extension."
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:577
+msgid ""
+"This works with the Contact Form 7 plugin, but the Contact Form 7 plugin is "
+"not activated."
+msgstr ""
+
+#: includes/CF7bwpCAPT.class.php:591
+msgid ""
+"This works with the Better WordPress reCAPTCHA plugin, but the Better "
+"WordPress reCAPTCHA plugin is not activated."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Contact Form 7 BWP reCAPTCHA Extension"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.manfersite.tk/cf7bwpcapt"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Provides Better WordPress reCAPTCHA possibilities to the Contact Form 7 "
+"plugin. Requires both."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Fernando San Julián"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.manfersite.tk"
+msgstr ""

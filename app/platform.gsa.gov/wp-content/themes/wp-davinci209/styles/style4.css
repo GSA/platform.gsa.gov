@@ -1,0 +1,88 @@
+/*------[ alt-style-4 ]------*/
+
+body {
+	background:#fff;
+
+	}
+
+#outer-wrap {
+	border:0px;
+	}
+
+
+h1,h2,h3,h4,h5,h6,h7,
+#sitetitle .title {
+	font-family:georgia,'times new riman',serif;
+	font-weight:normal;
+	}
+
+/* --[ Top Navigation Colors, Etc. ]-- */
+
+#topnav {
+	background:#E5F2FF;
+	border:0;
+	font-weight:normal;
+	}
+
+#topnav ul li.searchform {
+	padding-right:4px;
+	padding-left:4px;
+	}
+
+#topnav ul a:hover { 
+	color:#000;
+	}
+
+#topnav ul ul  { 
+	border-color:#fff;
+	}
+
+#topnav ul ul a  {
+	border-color: #fff;
+	background:#E5F2FF;
+	}
+
+#topnav ul ul ul  { 
+	border-color:#fff;
+	}
+
+#catnav {
+	background:#000;
+	border-bottom:0;
+	font-size:9pt;
+	}
+
+#catnav ul a  {
+	color:#ccc;
+	}
+
+#catnav ul a:hover {
+	color:#fff;
+	}
+
+#catnav ul ul  { 
+	border-color: #333;
+	}
+
+#catnav ul ul a  {
+	width:180px; 
+	line-height:20px;
+	border-color: #333;
+	border-top:0;
+	background:#000;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

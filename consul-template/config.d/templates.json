@@ -1,0 +1,23 @@
+template {
+  source = "/consul-template/templates/00-wordpress-ms-s3.ctmpl"
+  destination = "/etc/nginx/sites-include/00-wordpress-ms-s3"
+  command = "/usr/sbin/service nginx reload"
+}
+
+template {
+  source = "/consul-template/templates/cli-zz-php.ini.ctmpl"
+  destination = "/etc/php/7.0/cli/conf.d/zz-ctac-php.ini"
+  command = "/usr/sbin/service php7.0-fpm reload"
+}
+
+template {
+  source = "/consul-template/templates/fpm-zz-php.ini.ctmpl"
+  destination = "/etc/php/7.0/fpm/conf.d/zz-ctac-php.ini"
+  command = "/usr/sbin/service php7.0-fpm reload"
+}
+
+template {
+  source = "/consul-template/templates/env.php.ctmpl"
+  destination = "/etc/php/env.php"
+  command = "/usr/sbin/service php7.0-fpm reload"
+}

@@ -1,0 +1,1176 @@
+
+A572 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+A572 .=> phpCAS::isAuthenticated() [OMBMax.class.php:21]
+A572 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+A572 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+A572 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1369]
+A572 .|    |    <= true
+A572 .|    |    user was already authenticated, no need to look for tickets [Client.php:1210]
+A572 .|    <= true
+A572 .<= true
+A572 .=> phpCAS::isAuthenticated() [OMBMax.class.php:29]
+A572 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+A572 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+A572 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1369]
+A572 .|    |    <= true
+A572 .|    |    user was already authenticated, no need to look for tickets [Client.php:1210]
+A572 .|    <= true
+A572 .<= true
+DD57 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+DD57 .=> phpCAS::isAuthenticated() [OMBMax.class.php:26]
+DD57 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+DD57 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+DD57 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1369]
+DD57 .|    |    <= true
+DD57 .|    |    user was already authenticated, no need to look for tickets [Client.php:1210]
+DD57 .|    <= true
+DD57 .<= true
+DD57 .=> phpCAS::isAuthenticated() [OMBMax.class.php:34]
+DD57 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+DD57 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+DD57 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1369]
+DD57 .|    |    <= true
+DD57 .|    |    user was already authenticated, no need to look for tickets [Client.php:1210]
+DD57 .|    <= true
+DD57 .<= true
+CA39 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+CA39 .=> phpCAS::logout() [OMBMax.class.php:16]
+CA39 .|    => CAS_Client::logout(array ()) [CAS.php:1467]
+CA39 .|    |    Prepare redirect to : https://login.max.gov/cas/logout [Client.php:1437]
+CA39 .|    |    exit()
+CA39 .|    |    -
+CA39 .|    -
+0ADA .START phpCAS-1.3.2 ****************** [CAS.php:450]
+0ADA .=> phpCAS::isAuthenticated() [OMBMax.class.php:26]
+0ADA .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+0ADA .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+0ADA .|    |    |    no user found [Client.php:1379]
+0ADA .|    |    <= false
+0ADA .|    |    no ticket found [Client.php:1262]
+0ADA .|    <= false
+0ADA .<= false
+0ADA .=> phpCAS::forceAuthentication() [OMBMax.class.php:28]
+0ADA .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+0ADA .|    |    => CAS_Client::isAuthenticated() [Client.php:1087]
+0ADA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+0ADA .|    |    |    |    no user found [Client.php:1379]
+0ADA .|    |    |    <= false
+0ADA .|    |    |    no ticket found [Client.php:1262]
+0ADA .|    |    <= false
+0ADA .|    |    => CAS_Client::redirectToCas(false) [Client.php:1096]
+0ADA .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1400]
+0ADA .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+0ADA .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3075]
+0ADA .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+0ADA .|    |    |    <= 'https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+0ADA .|    |    |    Redirect to : https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php [Client.php:1406]
+0ADA .|    |    |    exit()
+0ADA .|    |    |    -
+0ADA .|    |    -
+0ADA .|    -
+562B .START phpCAS-1.3.2 ****************** [CAS.php:450]
+562B .=> phpCAS::isAuthenticated() [OMBMax.class.php:26]
+562B .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+562B .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+562B .|    |    |    no user found [Client.php:1379]
+562B .|    |    <= false
+562B .|    |    CAS 2.0 ticket `ST-321496-CSe0jgRAn37M0aqQcFnb-cas' is present [Client.php:1227]
+562B .|    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1228]
+562B .|    |    |     [Client.php:2751]
+562B .|    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2757]
+562B .|    |    |    |    => CAS_Client::getURL() [Client.php:418]
+562B .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3075]
+562B .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+562B .|    |    |    <= 'https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+562B .|    |    |    => CAS_Client::_readURL('https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php&ticket=ST-321496-CSe0jgRAn37M0aqQcFnb-cas', NULL, NULL, NULL) [Client.php:2766]
+562B .|    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+562B .|    |    |    |    |    Response Body: 
+562B .|    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'  xmlns:maxAttribute='https://max.gov'>
+562B .|    |    |    |    |    
+562B .|    |    |    |    |        
+562B .|    |    |    |    |        
+562B .|    |    |    |    |        
+562B .|    |    |    |    |    	<cas:authenticationSuccess>
+562B .|    |    |    |    |                
+562B .|    |    |    |    |                
+562B .|    |    |    |    |                
+562B .|    |    |    |    |                
+562B .|    |    |    |    |                
+562B .|    |    |    |    |                
+562B .|    |    |    |    |                
+562B .|    |    |    |    |                    <cas:user>smacfarland@ctacorp.com</cas:user>
+562B .|    |    |    |    |                
+562B .|    |    |    |    |                
+562B .|    |    |    |    |    
+562B .|    |    |    |    |    
+562B .|    |    |    |    |    
+562B .|    |    |    |    |    
+562B .|    |    |    |    |                    <cas:attributes>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:samlAuthenticationStatementAuthMethod>urn:oasis:names:tc:SAML:1.0:am:password</maxAttribute:samlAuthenticationStatementAuthMethod>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:User-Classification>SPONSORED-CONTRACTOR</maxAttribute:User-Classification>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Org-Agency-Name>General Services Administration</maxAttribute:Org-Agency-Name>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Phone>(703) 582-8378</maxAttribute:Phone>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Org-Bureau-Code></maxAttribute:Org-Bureau-Code>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Org-Bureau-Name>General Services Administration</maxAttribute:Org-Bureau-Name>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:User-Status>A</maxAttribute:User-Status>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Middle-Name></maxAttribute:Middle-Name>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:MAX-ID>A088144</maxAttribute:MAX-ID>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Org-Tag>(GSA)</maxAttribute:Org-Tag>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Org-Agency-Code>023</maxAttribute:Org-Agency-Code>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:GroupList>AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO</maxAttribute:GroupList>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Email-Address>smacfarland@ctacorp.com</maxAttribute:Email-Address>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Usemaxid>1</maxAttribute:Usemaxid>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:Last-Name>MacFarland</maxAttribute:Last-Name>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                            <maxAttribute:First-Name>Shawn</maxAttribute:First-Name>
+562B .|    |    |    |    |                        
+562B .|    |    |    |    |                    </cas:attributes>
+562B .|    |    |    |    |    
+562B .|    |    |    |    |    	</cas:authenticationSuccess>
+562B .|    |    |    |    |    </cas:serviceResponse>
+562B .|    |    |    |    |     [CurlRequest.php:82]
+562B .|    |    |    |    <= true
+562B .|    |    |    <= true
+562B .|    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2817]
+562B .|    |    |    |    Found nested jasig style attributes [Client.php:2902]
+562B .|    |    |    |    Attribute [samlAuthenticationStatementAuthMethod] = urn:oasis:names:tc:SAML:1.0:am:password [Client.php:2906]
+562B .|    |    |    |    Attribute [User-Classification] = SPONSORED-CONTRACTOR [Client.php:2906]
+562B .|    |    |    |    Attribute [Org-Agency-Name] = General Services Administration [Client.php:2906]
+562B .|    |    |    |    Attribute [Phone] = (703) 582-8378 [Client.php:2906]
+562B .|    |    |    |    Attribute [Org-Bureau-Code] =  [Client.php:2906]
+562B .|    |    |    |    Attribute [Org-Bureau-Name] = General Services Administration [Client.php:2906]
+562B .|    |    |    |    Attribute [User-Status] = A [Client.php:2906]
+562B .|    |    |    |    Attribute [Middle-Name] =  [Client.php:2906]
+562B .|    |    |    |    Attribute [MAX-ID] = A088144 [Client.php:2906]
+562B .|    |    |    |    Attribute [Org-Tag] = (GSA) [Client.php:2906]
+562B .|    |    |    |    Attribute [Org-Agency-Code] = 023 [Client.php:2906]
+562B .|    |    |    |    Attribute [GroupList] = AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO [Client.php:2906]
+562B .|    |    |    |    Attribute [Email-Address] = smacfarland@ctacorp.com [Client.php:2906]
+562B .|    |    |    |    Attribute [Usemaxid] = 1 [Client.php:2906]
+562B .|    |    |    |    Attribute [Last-Name] = MacFarland [Client.php:2906]
+562B .|    |    |    |    Attribute [First-Name] = Shawn [Client.php:2906]
+562B .|    |    |    <= ''
+562B .|    |    |    Storing Proxy List [Client.php:2826]
+562B .|    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2829]
+562B .|    |    |    |    No proxies were found in the response [AllowedList.php:81]
+562B .|    |    |    <= true
+562B .|    |    |    => CAS_Client::_renameSession('ST-321496-CSe0jgRAn37M0aqQcFnb-cas') [Client.php:2860]
+562B .|    |    |    |    Session ID: ST-321496-CSe0jgRAn37M0aqQcFnb-cas [Client.php:3184]
+562B .|    |    |    |    Restoring old session vars [Client.php:3187]
+562B .|    |    |    <= ''
+562B .|    |    <= true
+562B .|    |    CAS 2.0 ticket `ST-321496-CSe0jgRAn37M0aqQcFnb-cas' was validated [Client.php:1229]
+562B .|    |    => CAS_Client::getURL() [Client.php:1283]
+562B .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+562B .|    |    Prepare redirect to : http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:1283]
+562B .|    |    => CAS_Client::getURL() [Client.php:1284]
+562B .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+562B .|    |    exit()
+562B .|    |    -
+562B .|    -
+37B8 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+37B8 .=> phpCAS::isAuthenticated() [OMBMax.class.php:26]
+37B8 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+37B8 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+37B8 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1369]
+37B8 .|    |    <= true
+37B8 .|    |    user was already authenticated, no need to look for tickets [Client.php:1210]
+37B8 .|    <= true
+37B8 .<= true
+37B8 .=> phpCAS::isAuthenticated() [OMBMax.class.php:34]
+37B8 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+37B8 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+37B8 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1369]
+37B8 .|    |    <= true
+37B8 .|    |    user was already authenticated, no need to look for tickets [Client.php:1210]
+37B8 .|    <= true
+37B8 .<= true
+00F8 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+00F8 .=> phpCAS::isAuthenticated() [OMBMax.class.php:34]
+00F8 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+00F8 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+00F8 .|    |    |    no user found [Client.php:1379]
+00F8 .|    |    <= false
+00F8 .|    |    no ticket found [Client.php:1262]
+00F8 .|    <= false
+00F8 .<= false
+935A .START phpCAS-1.3.2 ****************** [CAS.php:450]
+935A .=> phpCAS::isAuthenticated() [OMBMax.class.php:26]
+935A .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+935A .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+935A .|    |    |    no user found [Client.php:1379]
+935A .|    |    <= false
+935A .|    |    no ticket found [Client.php:1262]
+935A .|    <= false
+935A .<= false
+935A .=> phpCAS::forceAuthentication() [OMBMax.class.php:28]
+935A .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+935A .|    |    => CAS_Client::isAuthenticated() [Client.php:1087]
+935A .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+935A .|    |    |    |    no user found [Client.php:1379]
+935A .|    |    |    <= false
+935A .|    |    |    no ticket found [Client.php:1262]
+935A .|    |    <= false
+935A .|    |    => CAS_Client::redirectToCas(false) [Client.php:1096]
+935A .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1400]
+935A .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+935A .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3075]
+935A .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+935A .|    |    |    <= 'https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+935A .|    |    |    Redirect to : https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php [Client.php:1406]
+935A .|    |    |    exit()
+935A .|    |    |    -
+935A .|    |    -
+935A .|    -
+F819 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+F819 .=> phpCAS::isAuthenticated() [OMBMax.class.php:26]
+F819 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+F819 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+F819 .|    |    |    no user found [Client.php:1379]
+F819 .|    |    <= false
+F819 .|    |    CAS 2.0 ticket `ST-321723-fp7WEJW90yL4qWKMH4Fq-cas' is present [Client.php:1227]
+F819 .|    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1228]
+F819 .|    |    |     [Client.php:2751]
+F819 .|    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2757]
+F819 .|    |    |    |    => CAS_Client::getURL() [Client.php:418]
+F819 .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3075]
+F819 .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+F819 .|    |    |    <= 'https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+F819 .|    |    |    => CAS_Client::_readURL('https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php&ticket=ST-321723-fp7WEJW90yL4qWKMH4Fq-cas', NULL, NULL, NULL) [Client.php:2766]
+F819 .|    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+F819 .|    |    |    |    |    Response Body: 
+F819 .|    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'  xmlns:maxAttribute='https://max.gov'>
+F819 .|    |    |    |    |    
+F819 .|    |    |    |    |        
+F819 .|    |    |    |    |        
+F819 .|    |    |    |    |        
+F819 .|    |    |    |    |    	<cas:authenticationSuccess>
+F819 .|    |    |    |    |                
+F819 .|    |    |    |    |                
+F819 .|    |    |    |    |                
+F819 .|    |    |    |    |                
+F819 .|    |    |    |    |                
+F819 .|    |    |    |    |                
+F819 .|    |    |    |    |                
+F819 .|    |    |    |    |                    <cas:user>smacfarland@ctacorp.com</cas:user>
+F819 .|    |    |    |    |                
+F819 .|    |    |    |    |                
+F819 .|    |    |    |    |    
+F819 .|    |    |    |    |    
+F819 .|    |    |    |    |    
+F819 .|    |    |    |    |    
+F819 .|    |    |    |    |                    <cas:attributes>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:samlAuthenticationStatementAuthMethod>urn:oasis:names:tc:SAML:1.0:am:password</maxAttribute:samlAuthenticationStatementAuthMethod>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:User-Classification>SPONSORED-CONTRACTOR</maxAttribute:User-Classification>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Org-Agency-Name>General Services Administration</maxAttribute:Org-Agency-Name>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Phone>(703) 582-8378</maxAttribute:Phone>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Org-Bureau-Code></maxAttribute:Org-Bureau-Code>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Org-Bureau-Name>General Services Administration</maxAttribute:Org-Bureau-Name>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:User-Status>A</maxAttribute:User-Status>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Middle-Name></maxAttribute:Middle-Name>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:MAX-ID>A088144</maxAttribute:MAX-ID>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Org-Tag>(GSA)</maxAttribute:Org-Tag>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Org-Agency-Code>023</maxAttribute:Org-Agency-Code>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:GroupList>AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO</maxAttribute:GroupList>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Email-Address>smacfarland@ctacorp.com</maxAttribute:Email-Address>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Usemaxid>1</maxAttribute:Usemaxid>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:Last-Name>MacFarland</maxAttribute:Last-Name>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                            <maxAttribute:First-Name>Shawn</maxAttribute:First-Name>
+F819 .|    |    |    |    |                        
+F819 .|    |    |    |    |                    </cas:attributes>
+F819 .|    |    |    |    |    
+F819 .|    |    |    |    |    	</cas:authenticationSuccess>
+F819 .|    |    |    |    |    </cas:serviceResponse>
+F819 .|    |    |    |    |     [CurlRequest.php:82]
+F819 .|    |    |    |    <= true
+F819 .|    |    |    <= true
+F819 .|    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2817]
+F819 .|    |    |    |    Found nested jasig style attributes [Client.php:2902]
+F819 .|    |    |    |    Attribute [samlAuthenticationStatementAuthMethod] = urn:oasis:names:tc:SAML:1.0:am:password [Client.php:2906]
+F819 .|    |    |    |    Attribute [User-Classification] = SPONSORED-CONTRACTOR [Client.php:2906]
+F819 .|    |    |    |    Attribute [Org-Agency-Name] = General Services Administration [Client.php:2906]
+F819 .|    |    |    |    Attribute [Phone] = (703) 582-8378 [Client.php:2906]
+F819 .|    |    |    |    Attribute [Org-Bureau-Code] =  [Client.php:2906]
+F819 .|    |    |    |    Attribute [Org-Bureau-Name] = General Services Administration [Client.php:2906]
+F819 .|    |    |    |    Attribute [User-Status] = A [Client.php:2906]
+F819 .|    |    |    |    Attribute [Middle-Name] =  [Client.php:2906]
+F819 .|    |    |    |    Attribute [MAX-ID] = A088144 [Client.php:2906]
+F819 .|    |    |    |    Attribute [Org-Tag] = (GSA) [Client.php:2906]
+F819 .|    |    |    |    Attribute [Org-Agency-Code] = 023 [Client.php:2906]
+F819 .|    |    |    |    Attribute [GroupList] = AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO [Client.php:2906]
+F819 .|    |    |    |    Attribute [Email-Address] = smacfarland@ctacorp.com [Client.php:2906]
+F819 .|    |    |    |    Attribute [Usemaxid] = 1 [Client.php:2906]
+F819 .|    |    |    |    Attribute [Last-Name] = MacFarland [Client.php:2906]
+F819 .|    |    |    |    Attribute [First-Name] = Shawn [Client.php:2906]
+F819 .|    |    |    <= ''
+F819 .|    |    |    Storing Proxy List [Client.php:2826]
+F819 .|    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2829]
+F819 .|    |    |    |    No proxies were found in the response [AllowedList.php:81]
+F819 .|    |    |    <= true
+F819 .|    |    |    => CAS_Client::_renameSession('ST-321723-fp7WEJW90yL4qWKMH4Fq-cas') [Client.php:2860]
+F819 .|    |    |    |    Session ID: ST-321723-fp7WEJW90yL4qWKMH4Fq-cas [Client.php:3184]
+F819 .|    |    |    |    Restoring old session vars [Client.php:3187]
+F819 .|    |    |    <= ''
+F819 .|    |    <= true
+F819 .|    |    CAS 2.0 ticket `ST-321723-fp7WEJW90yL4qWKMH4Fq-cas' was validated [Client.php:1229]
+F819 .|    |    => CAS_Client::getURL() [Client.php:1283]
+F819 .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+F819 .|    |    Prepare redirect to : http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:1283]
+F819 .|    |    => CAS_Client::getURL() [Client.php:1284]
+F819 .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+F819 .|    |    exit()
+F819 .|    |    -
+F819 .|    -
+5029 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+5029 .=> phpCAS::isAuthenticated() [OMBMax.class.php:26]
+5029 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+5029 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+5029 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1369]
+5029 .|    |    <= true
+5029 .|    |    user was already authenticated, no need to look for tickets [Client.php:1210]
+5029 .|    <= true
+5029 .<= true
+5029 .=> phpCAS::isAuthenticated() [OMBMax.class.php:34]
+5029 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+5029 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1193]
+5029 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1369]
+5029 .|    |    <= true
+5029 .|    |    user was already authenticated, no need to look for tickets [Client.php:1210]
+5029 .|    <= true
+5029 .<= true
+0902 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+0902 .=> phpCAS::isAuthenticated() [OMBMax.class.php:16]
+0902 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+0902 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+0902 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+0902 .|    |    <= true
+0902 .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+0902 .|    <= true
+0902 .<= true
+B702 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+B702 .=> phpCAS::isAuthenticated() [OMBMax.class.php:36]
+B702 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+B702 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B702 .|    |    |    no user found [Client.php:1375]
+B702 .|    |    <= false
+B702 .|    |    no ticket found [Client.php:1258]
+B702 .|    <= false
+B702 .<= false
+B702 .=> phpCAS::forceAuthentication() [OMBMax.class.php:38]
+B702 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+B702 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+B702 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B702 .|    |    |    |    no user found [Client.php:1375]
+B702 .|    |    |    <= false
+B702 .|    |    |    no ticket found [Client.php:1258]
+B702 .|    |    <= false
+B702 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+B702 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+B702 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+B702 .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3070]
+B702 .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+B702 .|    |    |    <= 'https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+B702 .|    |    |    Redirect to : https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php [Client.php:1402]
+B702 .|    |    |    exit()
+B702 .|    |    |    -
+B702 .|    |    -
+B702 .|    -
+85E7 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+85E7 .=> phpCAS::isAuthenticated() [OMBMax.class.php:36]
+85E7 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+85E7 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+85E7 .|    |    |    no user found [Client.php:1375]
+85E7 .|    |    <= false
+85E7 .|    |    CAS 2.0 ticket `ST-326347-x4wgHKGmhxFRqxRE4Zrw-cas' is present [Client.php:1223]
+85E7 .|    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1224]
+85E7 .|    |    |     [Client.php:2746]
+85E7 .|    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2752]
+85E7 .|    |    |    |    => CAS_Client::getURL() [Client.php:417]
+85E7 .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3070]
+85E7 .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+85E7 .|    |    |    <= 'https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+85E7 .|    |    |    => CAS_Client::_readURL('https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php&ticket=ST-326347-x4wgHKGmhxFRqxRE4Zrw-cas', NULL, NULL, NULL) [Client.php:2761]
+85E7 .|    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+85E7 .|    |    |    |    |    Response Body: 
+85E7 .|    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'  xmlns:maxAttribute='https://max.gov'>
+85E7 .|    |    |    |    |    
+85E7 .|    |    |    |    |        
+85E7 .|    |    |    |    |        
+85E7 .|    |    |    |    |        
+85E7 .|    |    |    |    |    	<cas:authenticationSuccess>
+85E7 .|    |    |    |    |                
+85E7 .|    |    |    |    |                
+85E7 .|    |    |    |    |                
+85E7 .|    |    |    |    |                
+85E7 .|    |    |    |    |                
+85E7 .|    |    |    |    |                
+85E7 .|    |    |    |    |                
+85E7 .|    |    |    |    |                    <cas:user>smacfarland@ctacorp.com</cas:user>
+85E7 .|    |    |    |    |                
+85E7 .|    |    |    |    |                
+85E7 .|    |    |    |    |    
+85E7 .|    |    |    |    |    
+85E7 .|    |    |    |    |    
+85E7 .|    |    |    |    |    
+85E7 .|    |    |    |    |                    <cas:attributes>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:samlAuthenticationStatementAuthMethod>urn:oasis:names:tc:SAML:1.0:am:password</maxAttribute:samlAuthenticationStatementAuthMethod>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:User-Classification>SPONSORED-CONTRACTOR</maxAttribute:User-Classification>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Org-Agency-Name>General Services Administration</maxAttribute:Org-Agency-Name>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Phone>(703) 582-8378</maxAttribute:Phone>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Org-Bureau-Code></maxAttribute:Org-Bureau-Code>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Org-Bureau-Name>General Services Administration</maxAttribute:Org-Bureau-Name>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:User-Status>A</maxAttribute:User-Status>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Middle-Name></maxAttribute:Middle-Name>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:MAX-ID>A088144</maxAttribute:MAX-ID>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Org-Tag>(GSA)</maxAttribute:Org-Tag>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Org-Agency-Code>023</maxAttribute:Org-Agency-Code>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:GroupList>AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO</maxAttribute:GroupList>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Email-Address>smacfarland@ctacorp.com</maxAttribute:Email-Address>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Usemaxid>1</maxAttribute:Usemaxid>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:Last-Name>MacFarland</maxAttribute:Last-Name>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                            <maxAttribute:First-Name>Shawn</maxAttribute:First-Name>
+85E7 .|    |    |    |    |                        
+85E7 .|    |    |    |    |                    </cas:attributes>
+85E7 .|    |    |    |    |    
+85E7 .|    |    |    |    |    	</cas:authenticationSuccess>
+85E7 .|    |    |    |    |    </cas:serviceResponse>
+85E7 .|    |    |    |    |     [CurlRequest.php:82]
+85E7 .|    |    |    |    <= true
+85E7 .|    |    |    <= true
+85E7 .|    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2812]
+85E7 .|    |    |    |    Found nested jasig style attributes [Client.php:2897]
+85E7 .|    |    |    |    Attribute [samlAuthenticationStatementAuthMethod] = urn:oasis:names:tc:SAML:1.0:am:password [Client.php:2901]
+85E7 .|    |    |    |    Attribute [User-Classification] = SPONSORED-CONTRACTOR [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Org-Agency-Name] = General Services Administration [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Phone] = (703) 582-8378 [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Org-Bureau-Code] =  [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Org-Bureau-Name] = General Services Administration [Client.php:2901]
+85E7 .|    |    |    |    Attribute [User-Status] = A [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Middle-Name] =  [Client.php:2901]
+85E7 .|    |    |    |    Attribute [MAX-ID] = A088144 [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Org-Tag] = (GSA) [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Org-Agency-Code] = 023 [Client.php:2901]
+85E7 .|    |    |    |    Attribute [GroupList] = AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Email-Address] = smacfarland@ctacorp.com [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Usemaxid] = 1 [Client.php:2901]
+85E7 .|    |    |    |    Attribute [Last-Name] = MacFarland [Client.php:2901]
+85E7 .|    |    |    |    Attribute [First-Name] = Shawn [Client.php:2901]
+85E7 .|    |    |    <= ''
+85E7 .|    |    |    Storing Proxy List [Client.php:2821]
+85E7 .|    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2824]
+85E7 .|    |    |    |    No proxies were found in the response [AllowedList.php:81]
+85E7 .|    |    |    <= true
+85E7 .|    |    |    => CAS_Client::_renameSession('ST-326347-x4wgHKGmhxFRqxRE4Zrw-cas') [Client.php:2855]
+85E7 .|    |    |    |    Session ID: ST-326347-x4wgHKGmhxFRqxRE4Zrw-cas [Client.php:3179]
+85E7 .|    |    |    |    Restoring old session vars [Client.php:3182]
+85E7 .|    |    |    <= ''
+85E7 .|    |    <= true
+85E7 .|    |    CAS 2.0 ticket `ST-326347-x4wgHKGmhxFRqxRE4Zrw-cas' was validated [Client.php:1225]
+85E7 .|    |    => CAS_Client::getURL() [Client.php:1279]
+85E7 .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+85E7 .|    |    Prepare redirect to : http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:1279]
+85E7 .|    |    => CAS_Client::getURL() [Client.php:1280]
+85E7 .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+85E7 .|    |    exit()
+85E7 .|    |    -
+85E7 .|    -
+8213 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8213 .=> phpCAS::isAuthenticated() [OMBMax.class.php:36]
+8213 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+8213 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8213 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+8213 .|    |    <= true
+8213 .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8213 .|    <= true
+8213 .<= true
+8213 .=> phpCAS::isAuthenticated() [OMBMax.class.php:44]
+8213 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+8213 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8213 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+8213 .|    |    <= true
+8213 .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8213 .|    <= true
+8213 .<= true
+8B57 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8B57 .=> phpCAS::isAuthenticated() [OMBMax.class.php:16]
+8B57 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+8B57 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8B57 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+8B57 .|    |    <= true
+8B57 .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8B57 .|    <= true
+8B57 .<= true
+8B57 .=> phpCAS::logout(array ()) [OMBMax.class.php:30]
+8B57 .|    => CAS_Client::logout(array ()) [CAS.php:1467]
+8B57 .|    |    Prepare redirect to : https://login.max.gov/cas/logout [Client.php:1433]
+8B57 .|    |    exit()
+8B57 .|    |    -
+8B57 .|    -
+7734 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+7734 .=> phpCAS::isAuthenticated() [OMBMax.class.php:36]
+7734 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+7734 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+7734 .|    |    |    no user found [Client.php:1375]
+7734 .|    |    <= false
+7734 .|    |    no ticket found [Client.php:1258]
+7734 .|    <= false
+7734 .<= false
+7734 .=> phpCAS::forceAuthentication() [OMBMax.class.php:38]
+7734 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+7734 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+7734 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+7734 .|    |    |    |    no user found [Client.php:1375]
+7734 .|    |    |    <= false
+7734 .|    |    |    no ticket found [Client.php:1258]
+7734 .|    |    <= false
+7734 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+7734 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+7734 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+7734 .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3070]
+7734 .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+7734 .|    |    |    <= 'https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+7734 .|    |    |    Redirect to : https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php [Client.php:1402]
+7734 .|    |    |    exit()
+7734 .|    |    |    -
+7734 .|    |    -
+7734 .|    -
+5E11 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+5E11 .=> phpCAS::isAuthenticated() [OMBMax.class.php:33]
+5E11 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+5E11 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+5E11 .|    |    |    no user found [Client.php:1375]
+5E11 .|    |    <= false
+5E11 .|    |    no ticket found [Client.php:1258]
+5E11 .|    <= false
+5E11 .<= false
+5E11 .=> phpCAS::forceAuthentication() [OMBMax.class.php:35]
+5E11 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+5E11 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+5E11 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+5E11 .|    |    |    |    no user found [Client.php:1375]
+5E11 .|    |    |    <= false
+5E11 .|    |    |    no ticket found [Client.php:1258]
+5E11 .|    |    <= false
+5E11 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+5E11 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+5E11 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+5E11 .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3070]
+5E11 .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+5E11 .|    |    |    <= 'https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+5E11 .|    |    |    Redirect to : https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php [Client.php:1402]
+5E11 .|    |    |    exit()
+5E11 .|    |    |    -
+5E11 .|    |    -
+5E11 .|    -
+CD29 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+CD29 .=> phpCAS::isAuthenticated() [OMBMax.class.php:33]
+CD29 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+CD29 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+CD29 .|    |    |    no user found [Client.php:1375]
+CD29 .|    |    <= false
+CD29 .|    |    CAS 2.0 ticket `ST-327062-TNQPgJedPAmFbFjn3zdu-cas' is present [Client.php:1223]
+CD29 .|    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1224]
+CD29 .|    |    |     [Client.php:2746]
+CD29 .|    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2752]
+CD29 .|    |    |    |    => CAS_Client::getURL() [Client.php:417]
+CD29 .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3070]
+CD29 .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+CD29 .|    |    |    <= 'https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+CD29 .|    |    |    => CAS_Client::_readURL('https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php&ticket=ST-327062-TNQPgJedPAmFbFjn3zdu-cas', NULL, NULL, NULL) [Client.php:2761]
+CD29 .|    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+CD29 .|    |    |    |    |    Response Body: 
+CD29 .|    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'  xmlns:maxAttribute='https://max.gov'>
+CD29 .|    |    |    |    |    
+CD29 .|    |    |    |    |        
+CD29 .|    |    |    |    |        
+CD29 .|    |    |    |    |        
+CD29 .|    |    |    |    |    	<cas:authenticationSuccess>
+CD29 .|    |    |    |    |                
+CD29 .|    |    |    |    |                
+CD29 .|    |    |    |    |                
+CD29 .|    |    |    |    |                
+CD29 .|    |    |    |    |                
+CD29 .|    |    |    |    |                
+CD29 .|    |    |    |    |                
+CD29 .|    |    |    |    |                    <cas:user>smacfarland@ctacorp.com</cas:user>
+CD29 .|    |    |    |    |                
+CD29 .|    |    |    |    |                
+CD29 .|    |    |    |    |    
+CD29 .|    |    |    |    |    
+CD29 .|    |    |    |    |    
+CD29 .|    |    |    |    |    
+CD29 .|    |    |    |    |                    <cas:attributes>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:samlAuthenticationStatementAuthMethod>urn:oasis:names:tc:SAML:1.0:am:password</maxAttribute:samlAuthenticationStatementAuthMethod>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:User-Classification>SPONSORED-CONTRACTOR</maxAttribute:User-Classification>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Org-Agency-Name>General Services Administration</maxAttribute:Org-Agency-Name>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Phone>(703) 582-8378</maxAttribute:Phone>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Org-Bureau-Code></maxAttribute:Org-Bureau-Code>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Org-Bureau-Name>General Services Administration</maxAttribute:Org-Bureau-Name>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:User-Status>A</maxAttribute:User-Status>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Middle-Name></maxAttribute:Middle-Name>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:MAX-ID>A088144</maxAttribute:MAX-ID>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Org-Tag>(GSA)</maxAttribute:Org-Tag>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Org-Agency-Code>023</maxAttribute:Org-Agency-Code>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:GroupList>AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO</maxAttribute:GroupList>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Email-Address>smacfarland@ctacorp.com</maxAttribute:Email-Address>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Usemaxid>1</maxAttribute:Usemaxid>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:Last-Name>MacFarland</maxAttribute:Last-Name>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                            <maxAttribute:First-Name>Shawn</maxAttribute:First-Name>
+CD29 .|    |    |    |    |                        
+CD29 .|    |    |    |    |                    </cas:attributes>
+CD29 .|    |    |    |    |    
+CD29 .|    |    |    |    |    	</cas:authenticationSuccess>
+CD29 .|    |    |    |    |    </cas:serviceResponse>
+CD29 .|    |    |    |    |     [CurlRequest.php:82]
+CD29 .|    |    |    |    <= true
+CD29 .|    |    |    <= true
+CD29 .|    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2812]
+CD29 .|    |    |    |    Found nested jasig style attributes [Client.php:2897]
+CD29 .|    |    |    |    Attribute [samlAuthenticationStatementAuthMethod] = urn:oasis:names:tc:SAML:1.0:am:password [Client.php:2901]
+CD29 .|    |    |    |    Attribute [User-Classification] = SPONSORED-CONTRACTOR [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Org-Agency-Name] = General Services Administration [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Phone] = (703) 582-8378 [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Org-Bureau-Code] =  [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Org-Bureau-Name] = General Services Administration [Client.php:2901]
+CD29 .|    |    |    |    Attribute [User-Status] = A [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Middle-Name] =  [Client.php:2901]
+CD29 .|    |    |    |    Attribute [MAX-ID] = A088144 [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Org-Tag] = (GSA) [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Org-Agency-Code] = 023 [Client.php:2901]
+CD29 .|    |    |    |    Attribute [GroupList] = AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Email-Address] = smacfarland@ctacorp.com [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Usemaxid] = 1 [Client.php:2901]
+CD29 .|    |    |    |    Attribute [Last-Name] = MacFarland [Client.php:2901]
+CD29 .|    |    |    |    Attribute [First-Name] = Shawn [Client.php:2901]
+CD29 .|    |    |    <= ''
+CD29 .|    |    |    Storing Proxy List [Client.php:2821]
+CD29 .|    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2824]
+CD29 .|    |    |    |    No proxies were found in the response [AllowedList.php:81]
+CD29 .|    |    |    <= true
+CD29 .|    |    |    => CAS_Client::_renameSession('ST-327062-TNQPgJedPAmFbFjn3zdu-cas') [Client.php:2855]
+CD29 .|    |    |    |    Session ID: ST-327062-TNQPgJedPAmFbFjn3zdu-cas [Client.php:3179]
+CD29 .|    |    |    |    Restoring old session vars [Client.php:3182]
+CD29 .|    |    |    <= ''
+CD29 .|    |    <= true
+CD29 .|    |    CAS 2.0 ticket `ST-327062-TNQPgJedPAmFbFjn3zdu-cas' was validated [Client.php:1225]
+CD29 .|    |    => CAS_Client::getURL() [Client.php:1279]
+CD29 .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+CD29 .|    |    Prepare redirect to : http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:1279]
+CD29 .|    |    => CAS_Client::getURL() [Client.php:1280]
+CD29 .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+CD29 .|    |    exit()
+CD29 .|    |    -
+CD29 .|    -
+8219 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8219 .=> phpCAS::isAuthenticated() [OMBMax.class.php:33]
+8219 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+8219 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8219 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+8219 .|    |    <= true
+8219 .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8219 .|    <= true
+8219 .<= true
+8219 .=> phpCAS::isAuthenticated() [OMBMax.class.php:41]
+8219 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+8219 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8219 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+8219 .|    |    <= true
+8219 .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8219 .|    <= true
+8219 .<= true
+8A9C .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8A9C .=> phpCAS::isAuthenticated() [OMBMax.class.php:16]
+8A9C .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+8A9C .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8A9C .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+8A9C .|    |    <= true
+8A9C .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8A9C .|    <= true
+8A9C .<= true
+8A9C .=> phpCAS::logout(array (  'url' => 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/logout_url.php',)) [OMBMax.class.php:25]
+8A9C .|    => CAS_Client::logout(array (  'url' => 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/logout_url.php',)) [CAS.php:1467]
+8A9C .|    |    Prepare redirect to : https://login.max.gov/cas/logout?url=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Flogout_url.php [Client.php:1433]
+8A9C .|    |    exit()
+8A9C .|    |    -
+8A9C .|    -
+9812 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9812 .=> phpCAS::isAuthenticated() [OMBMax.class.php:16]
+9812 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+9812 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9812 .|    |    |    no user found [Client.php:1375]
+9812 .|    |    <= false
+9812 .|    |    no ticket found [Client.php:1258]
+9812 .|    <= false
+9812 .<= false
+9812 .=> phpCAS::isAuthenticated() [OMBMax.class.php:41]
+9812 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+9812 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9812 .|    |    |    no user found [Client.php:1375]
+9812 .|    |    <= false
+9812 .|    |    no ticket found [Client.php:1258]
+9812 .|    <= false
+9812 .<= false
+A34E .START phpCAS-1.3.2 ****************** [CAS.php:450]
+A34E .=> phpCAS::isAuthenticated() [OMBMax.class.php:33]
+A34E .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+A34E .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+A34E .|    |    |    no user found [Client.php:1375]
+A34E .|    |    <= false
+A34E .|    |    no ticket found [Client.php:1258]
+A34E .|    <= false
+A34E .<= false
+A34E .=> phpCAS::forceAuthentication() [OMBMax.class.php:35]
+A34E .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+A34E .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+A34E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+A34E .|    |    |    |    no user found [Client.php:1375]
+A34E .|    |    |    <= false
+A34E .|    |    |    no ticket found [Client.php:1258]
+A34E .|    |    <= false
+A34E .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+A34E .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+A34E .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+A34E .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3070]
+A34E .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+A34E .|    |    |    <= 'https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+A34E .|    |    |    Redirect to : https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php [Client.php:1402]
+A34E .|    |    |    exit()
+A34E .|    |    |    -
+A34E .|    |    -
+A34E .|    -
+8B1B .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8B1B .=> phpCAS::isAuthenticated() [OMBMax.class.php:33]
+8B1B .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+8B1B .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8B1B .|    |    |    no user found [Client.php:1375]
+8B1B .|    |    <= false
+8B1B .|    |    CAS 2.0 ticket `ST-327231-s4TO4OHNPlcomikxQucD-cas' is present [Client.php:1223]
+8B1B .|    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1224]
+8B1B .|    |    |     [Client.php:2746]
+8B1B .|    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2752]
+8B1B .|    |    |    |    => CAS_Client::getURL() [Client.php:417]
+8B1B .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3070]
+8B1B .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+8B1B .|    |    |    <= 'https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+8B1B .|    |    |    => CAS_Client::_readURL('https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php&ticket=ST-327231-s4TO4OHNPlcomikxQucD-cas', NULL, NULL, NULL) [Client.php:2761]
+8B1B .|    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+8B1B .|    |    |    |    |    Response Body: 
+8B1B .|    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'  xmlns:maxAttribute='https://max.gov'>
+8B1B .|    |    |    |    |    
+8B1B .|    |    |    |    |        
+8B1B .|    |    |    |    |        
+8B1B .|    |    |    |    |        
+8B1B .|    |    |    |    |    	<cas:authenticationSuccess>
+8B1B .|    |    |    |    |                
+8B1B .|    |    |    |    |                
+8B1B .|    |    |    |    |                
+8B1B .|    |    |    |    |                
+8B1B .|    |    |    |    |                
+8B1B .|    |    |    |    |                
+8B1B .|    |    |    |    |                
+8B1B .|    |    |    |    |                    <cas:user>smacfarland@ctacorp.com</cas:user>
+8B1B .|    |    |    |    |                
+8B1B .|    |    |    |    |                
+8B1B .|    |    |    |    |    
+8B1B .|    |    |    |    |    
+8B1B .|    |    |    |    |    
+8B1B .|    |    |    |    |    
+8B1B .|    |    |    |    |                    <cas:attributes>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:samlAuthenticationStatementAuthMethod>urn:oasis:names:tc:SAML:1.0:am:password</maxAttribute:samlAuthenticationStatementAuthMethod>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:User-Classification>SPONSORED-CONTRACTOR</maxAttribute:User-Classification>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Org-Agency-Name>General Services Administration</maxAttribute:Org-Agency-Name>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Phone>(703) 582-8378</maxAttribute:Phone>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Org-Bureau-Code></maxAttribute:Org-Bureau-Code>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Org-Bureau-Name>General Services Administration</maxAttribute:Org-Bureau-Name>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:User-Status>A</maxAttribute:User-Status>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Middle-Name></maxAttribute:Middle-Name>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:MAX-ID>A088144</maxAttribute:MAX-ID>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Org-Tag>(GSA)</maxAttribute:Org-Tag>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Org-Agency-Code>023</maxAttribute:Org-Agency-Code>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:GroupList>AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO</maxAttribute:GroupList>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Email-Address>smacfarland@ctacorp.com</maxAttribute:Email-Address>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Usemaxid>1</maxAttribute:Usemaxid>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:Last-Name>MacFarland</maxAttribute:Last-Name>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                            <maxAttribute:First-Name>Shawn</maxAttribute:First-Name>
+8B1B .|    |    |    |    |                        
+8B1B .|    |    |    |    |                    </cas:attributes>
+8B1B .|    |    |    |    |    
+8B1B .|    |    |    |    |    	</cas:authenticationSuccess>
+8B1B .|    |    |    |    |    </cas:serviceResponse>
+8B1B .|    |    |    |    |     [CurlRequest.php:82]
+8B1B .|    |    |    |    <= true
+8B1B .|    |    |    <= true
+8B1B .|    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2812]
+8B1B .|    |    |    |    Found nested jasig style attributes [Client.php:2897]
+8B1B .|    |    |    |    Attribute [samlAuthenticationStatementAuthMethod] = urn:oasis:names:tc:SAML:1.0:am:password [Client.php:2901]
+8B1B .|    |    |    |    Attribute [User-Classification] = SPONSORED-CONTRACTOR [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Org-Agency-Name] = General Services Administration [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Phone] = (703) 582-8378 [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Org-Bureau-Code] =  [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Org-Bureau-Name] = General Services Administration [Client.php:2901]
+8B1B .|    |    |    |    Attribute [User-Status] = A [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Middle-Name] =  [Client.php:2901]
+8B1B .|    |    |    |    Attribute [MAX-ID] = A088144 [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Org-Tag] = (GSA) [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Org-Agency-Code] = 023 [Client.php:2901]
+8B1B .|    |    |    |    Attribute [GroupList] = AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Email-Address] = smacfarland@ctacorp.com [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Usemaxid] = 1 [Client.php:2901]
+8B1B .|    |    |    |    Attribute [Last-Name] = MacFarland [Client.php:2901]
+8B1B .|    |    |    |    Attribute [First-Name] = Shawn [Client.php:2901]
+8B1B .|    |    |    <= ''
+8B1B .|    |    |    Storing Proxy List [Client.php:2821]
+8B1B .|    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2824]
+8B1B .|    |    |    |    No proxies were found in the response [AllowedList.php:81]
+8B1B .|    |    |    <= true
+8B1B .|    |    |    => CAS_Client::_renameSession('ST-327231-s4TO4OHNPlcomikxQucD-cas') [Client.php:2855]
+8B1B .|    |    |    |    Session ID: ST-327231-s4TO4OHNPlcomikxQucD-cas [Client.php:3179]
+8B1B .|    |    |    |    Restoring old session vars [Client.php:3182]
+8B1B .|    |    |    <= ''
+8B1B .|    |    <= true
+8B1B .|    |    CAS 2.0 ticket `ST-327231-s4TO4OHNPlcomikxQucD-cas' was validated [Client.php:1225]
+8B1B .|    |    => CAS_Client::getURL() [Client.php:1279]
+8B1B .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+8B1B .|    |    Prepare redirect to : http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:1279]
+8B1B .|    |    => CAS_Client::getURL() [Client.php:1280]
+8B1B .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+8B1B .|    |    exit()
+8B1B .|    |    -
+8B1B .|    -
+B8DE .START phpCAS-1.3.2 ****************** [CAS.php:450]
+B8DE .=> phpCAS::isAuthenticated() [OMBMax.class.php:33]
+B8DE .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+B8DE .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B8DE .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+B8DE .|    |    <= true
+B8DE .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+B8DE .|    <= true
+B8DE .<= true
+B8DE .=> phpCAS::isAuthenticated() [OMBMax.class.php:41]
+B8DE .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+B8DE .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B8DE .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+B8DE .|    |    <= true
+B8DE .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+B8DE .|    <= true
+B8DE .<= true
+A660 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+A660 .=> phpCAS::isAuthenticated() [OMBMax.class.php:16]
+A660 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+A660 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+A660 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+A660 .|    |    <= true
+A660 .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+A660 .|    <= true
+A660 .<= true
+A660 .=> phpCAS::logout(array (  'service' => 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/logout_service.php',)) [OMBMax.class.php:26]
+A660 .|    => CAS_Client::logout(array (  'service' => 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/logout_service.php',)) [CAS.php:1467]
+A660 .|    |    Prepare redirect to : https://login.max.gov/cas/logout?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Flogout_service.php [Client.php:1433]
+A660 .|    |    exit()
+A660 .|    |    -
+A660 .|    -
+55E1 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+55E1 .=> phpCAS::isAuthenticated() [OMBMax.class.php:32]
+55E1 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+55E1 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+55E1 .|    |    |    no user found [Client.php:1375]
+55E1 .|    |    <= false
+55E1 .|    |    no ticket found [Client.php:1258]
+55E1 .|    <= false
+55E1 .<= false
+55E1 .=> phpCAS::forceAuthentication() [OMBMax.class.php:34]
+55E1 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+55E1 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+55E1 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+55E1 .|    |    |    |    no user found [Client.php:1375]
+55E1 .|    |    |    <= false
+55E1 .|    |    |    no ticket found [Client.php:1258]
+55E1 .|    |    <= false
+55E1 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+55E1 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+55E1 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+55E1 .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3070]
+55E1 .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+55E1 .|    |    |    <= 'https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+55E1 .|    |    |    Redirect to : https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php [Client.php:1402]
+55E1 .|    |    |    exit()
+55E1 .|    |    |    -
+55E1 .|    |    -
+55E1 .|    -
+5F20 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+5F20 .=> phpCAS::isAuthenticated() [OMBMax.class.php:32]
+5F20 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+5F20 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+5F20 .|    |    |    no user found [Client.php:1375]
+5F20 .|    |    <= false
+5F20 .|    |    CAS 2.0 ticket `ST-327565-tOPtg206ilStNta9qveA-cas' is present [Client.php:1223]
+5F20 .|    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1224]
+5F20 .|    |    |     [Client.php:2746]
+5F20 .|    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2752]
+5F20 .|    |    |    |    => CAS_Client::getURL() [Client.php:417]
+5F20 .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:3070]
+5F20 .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+5F20 .|    |    |    <= 'https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php'
+5F20 .|    |    |    => CAS_Client::_readURL('https://login.max.gov/cas/serviceValidate?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php&ticket=ST-327565-tOPtg206ilStNta9qveA-cas', NULL, NULL, NULL) [Client.php:2761]
+5F20 .|    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+5F20 .|    |    |    |    |    Response Body: 
+5F20 .|    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'  xmlns:maxAttribute='https://max.gov'>
+5F20 .|    |    |    |    |    
+5F20 .|    |    |    |    |        
+5F20 .|    |    |    |    |        
+5F20 .|    |    |    |    |        
+5F20 .|    |    |    |    |    	<cas:authenticationSuccess>
+5F20 .|    |    |    |    |                
+5F20 .|    |    |    |    |                
+5F20 .|    |    |    |    |                
+5F20 .|    |    |    |    |                
+5F20 .|    |    |    |    |                
+5F20 .|    |    |    |    |                
+5F20 .|    |    |    |    |                
+5F20 .|    |    |    |    |                    <cas:user>smacfarland@ctacorp.com</cas:user>
+5F20 .|    |    |    |    |                
+5F20 .|    |    |    |    |                
+5F20 .|    |    |    |    |    
+5F20 .|    |    |    |    |    
+5F20 .|    |    |    |    |    
+5F20 .|    |    |    |    |    
+5F20 .|    |    |    |    |                    <cas:attributes>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:samlAuthenticationStatementAuthMethod>urn:oasis:names:tc:SAML:1.0:am:password</maxAttribute:samlAuthenticationStatementAuthMethod>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:User-Classification>SPONSORED-CONTRACTOR</maxAttribute:User-Classification>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Org-Agency-Name>General Services Administration</maxAttribute:Org-Agency-Name>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Phone>(703) 582-8378</maxAttribute:Phone>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Org-Bureau-Code></maxAttribute:Org-Bureau-Code>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Org-Bureau-Name>General Services Administration</maxAttribute:Org-Bureau-Name>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:User-Status>A</maxAttribute:User-Status>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Middle-Name></maxAttribute:Middle-Name>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:MAX-ID>A088144</maxAttribute:MAX-ID>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Org-Tag>(GSA)</maxAttribute:Org-Tag>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Org-Agency-Code>023</maxAttribute:Org-Agency-Code>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:GroupList>AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO</maxAttribute:GroupList>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Email-Address>smacfarland@ctacorp.com</maxAttribute:Email-Address>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Usemaxid>1</maxAttribute:Usemaxid>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:Last-Name>MacFarland</maxAttribute:Last-Name>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                            <maxAttribute:First-Name>Shawn</maxAttribute:First-Name>
+5F20 .|    |    |    |    |                        
+5F20 .|    |    |    |    |                    </cas:attributes>
+5F20 .|    |    |    |    |    
+5F20 .|    |    |    |    |    	</cas:authenticationSuccess>
+5F20 .|    |    |    |    |    </cas:serviceResponse>
+5F20 .|    |    |    |    |     [CurlRequest.php:82]
+5F20 .|    |    |    |    <= true
+5F20 .|    |    |    <= true
+5F20 .|    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2812]
+5F20 .|    |    |    |    Found nested jasig style attributes [Client.php:2897]
+5F20 .|    |    |    |    Attribute [samlAuthenticationStatementAuthMethod] = urn:oasis:names:tc:SAML:1.0:am:password [Client.php:2901]
+5F20 .|    |    |    |    Attribute [User-Classification] = SPONSORED-CONTRACTOR [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Org-Agency-Name] = General Services Administration [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Phone] = (703) 582-8378 [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Org-Bureau-Code] =  [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Org-Bureau-Name] = General Services Administration [Client.php:2901]
+5F20 .|    |    |    |    Attribute [User-Status] = A [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Middle-Name] =  [Client.php:2901]
+5F20 .|    |    |    |    Attribute [MAX-ID] = A088144 [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Org-Tag] = (GSA) [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Org-Agency-Code] = 023 [Client.php:2901]
+5F20 .|    |    |    |    Attribute [GroupList] = AGY-GSA,AGY-GSA.ECPIC.STEERING,EXECUTIVE_BRANCH,MAXINFO [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Email-Address] = smacfarland@ctacorp.com [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Usemaxid] = 1 [Client.php:2901]
+5F20 .|    |    |    |    Attribute [Last-Name] = MacFarland [Client.php:2901]
+5F20 .|    |    |    |    Attribute [First-Name] = Shawn [Client.php:2901]
+5F20 .|    |    |    <= ''
+5F20 .|    |    |    Storing Proxy List [Client.php:2821]
+5F20 .|    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2824]
+5F20 .|    |    |    |    No proxies were found in the response [AllowedList.php:81]
+5F20 .|    |    |    <= true
+5F20 .|    |    |    => CAS_Client::_renameSession('ST-327565-tOPtg206ilStNta9qveA-cas') [Client.php:2855]
+5F20 .|    |    |    |    Session ID: ST-327565-tOPtg206ilStNta9qveA-cas [Client.php:3179]
+5F20 .|    |    |    |    Restoring old session vars [Client.php:3182]
+5F20 .|    |    |    <= ''
+5F20 .|    |    <= true
+5F20 .|    |    CAS 2.0 ticket `ST-327565-tOPtg206ilStNta9qveA-cas' was validated [Client.php:1225]
+5F20 .|    |    => CAS_Client::getURL() [Client.php:1279]
+5F20 .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+5F20 .|    |    Prepare redirect to : http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php [Client.php:1279]
+5F20 .|    |    => CAS_Client::getURL() [Client.php:1280]
+5F20 .|    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php'
+5F20 .|    |    exit()
+5F20 .|    |    -
+5F20 .|    -
+DE69 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+DE69 .=> phpCAS::isAuthenticated() [OMBMax.class.php:32]
+DE69 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+DE69 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+DE69 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+DE69 .|    |    <= true
+DE69 .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+DE69 .|    <= true
+DE69 .<= true
+DE69 .=> phpCAS::isAuthenticated() [OMBMax.class.php:40]
+DE69 .|    => CAS_Client::isAuthenticated() [CAS.php:1151]
+DE69 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+DE69 .|    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+DE69 .|    |    <= true
+DE69 .|    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+DE69 .|    <= true
+DE69 .<= true
+2970 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+2970 .=> phpCAS::renewAuthentication() [OMBMax.class.php:12]
+2970 .|    => CAS_Client::renewAuthentication() [CAS.php:1128]
+2970 .|    |    => CAS_Client::isAuthenticated() [Client.php:1064]
+2970 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+2970 .|    |    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+2970 .|    |    |    <= true
+2970 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+2970 .|    |    <= true
+2970 .|    |    user already authenticated; renew [Client.php:1065]
+2970 .|    |    => CAS_Client::redirectToCas(false, true) [Client.php:1066]
+2970 .|    |    |    => CAS_Client::getServerLoginURL(false, true) [Client.php:1396]
+2970 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+2970 .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php?renew=1 [Client.php:3070]
+2970 .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php?renew=1'
+2970 .|    |    |    <= 'https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php%3Frenew%3D1&renew=true'
+2970 .|    |    |    Redirect to : https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php%3Frenew%3D1&renew=true [Client.php:1402]
+2970 .|    |    |    exit()
+2970 .|    |    |    -
+2970 .|    |    -
+2970 .|    -
+3DB1 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+3DB1 .=> phpCAS::renewAuthentication() [OMBMax.class.php:12]
+3DB1 .|    => CAS_Client::renewAuthentication() [CAS.php:1128]
+3DB1 .|    |    => CAS_Client::isAuthenticated() [Client.php:1064]
+3DB1 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+3DB1 .|    |    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+3DB1 .|    |    |    <= true
+3DB1 .|    |    |    ticket was present and will be discarded, use renewAuthenticate() [Client.php:1192]
+3DB1 .|    |    |    => CAS_Client::getURL() [Client.php:1194]
+3DB1 .|    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php?renew=1 [Client.php:3070]
+3DB1 .|    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php?renew=1'
+3DB1 .|    |    |    Prepare redirect to : http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php?renew=1 [Client.php:1194]
+3DB1 .|    |    |    => CAS_Client::getURL() [Client.php:1195]
+3DB1 .|    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php?renew=1'
+3DB1 .|    |    |    exit()
+3DB1 .|    |    |    -
+3DB1 .|    |    -
+3DB1 .|    -
+7EEA .START phpCAS-1.3.2 ****************** [CAS.php:450]
+7EEA .=> phpCAS::renewAuthentication() [OMBMax.class.php:12]
+7EEA .|    => CAS_Client::renewAuthentication() [CAS.php:1128]
+7EEA .|    |    => CAS_Client::isAuthenticated() [Client.php:1064]
+7EEA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+7EEA .|    |    |    |    user = `smacfarland@ctacorp.com' [Client.php:1365]
+7EEA .|    |    |    <= true
+7EEA .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+7EEA .|    |    <= true
+7EEA .|    |    user already authenticated; renew [Client.php:1065]
+7EEA .|    |    => CAS_Client::redirectToCas(false, true) [Client.php:1066]
+7EEA .|    |    |    => CAS_Client::getServerLoginURL(false, true) [Client.php:1396]
+7EEA .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+7EEA .|    |    |    |    |    Final URI: http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php?renew=1 [Client.php:3070]
+7EEA .|    |    |    |    <= 'http://gsasso.cloudoverdc.com/~dnarkiewicz/omb-max/test.php?renew=1'
+7EEA .|    |    |    <= 'https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php%3Frenew%3D1&renew=true'
+7EEA .|    |    |    Redirect to : https://login.max.gov/cas/login?service=http%3A%2F%2Fgsasso.cloudoverdc.com%2F%7Ednarkiewicz%2Fomb-max%2Ftest.php%3Frenew%3D1&renew=true [Client.php:1402]
+7EEA .|    |    |    exit()
+7EEA .|    |    |    -
+7EEA .|    |    -
+7EEA .|    -

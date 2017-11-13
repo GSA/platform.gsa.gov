@@ -1,0 +1,35 @@
+location ~* ^(/.*)?/files/(.*) {
+      resolver               8.8.4.4 8.8.8.8 172.31.0.2 valid=300s;
+      resolver_timeout       10s;
+      set $s3_bucket        'app_platform_prod_7qy4cvmkbyqg.s3.amazonaws.com';
+      set $url_full         '$2';
+      proxy_http_version     1.1;
+      proxy_set_header       Host $s3_bucket;
+      proxy_set_header       Authorization '';
+      proxy_hide_header      x-amz-id-2;
+      proxy_hide_header      x-amz-request-id;
+      proxy_hide_header      Set-Cookie;
+      proxy_ignore_headers   "Set-Cookie";
+      proxy_buffering        off;
+      proxy_intercept_errors on;
+      add_header DBG         https://$s3_bucket/wp-content/uploads/$wpsite$url_full always;
+      proxy_pass             https://$s3_bucket/wp-content/uploads/$wpsite$url_full;
+}
+
+location ~* ^(/.*)?/wp-content/uploads/(.*) {
+      resolver               8.8.4.4 8.8.8.8 172.31.0.2 valid=300s;
+      resolver_timeout       10s;
+      set $s3_bucket        'app_platform_prod_7qy4cvmkbyqg.s3.amazonaws.com';
+      set $url_full         '$2';
+      proxy_http_version     1.1;
+      proxy_set_header       Host $s3_bucket;
+      proxy_set_header       Authorization '';
+      proxy_hide_header      x-amz-id-2;
+      proxy_hide_header      x-amz-request-id;
+      proxy_hide_header      Set-Cookie;
+      proxy_ignore_headers   "Set-Cookie";
+      proxy_buffering        off;
+      proxy_intercept_errors on;
+      add_header DBG         https://$s3_bucket/wp-content/uploads/$wpsite$url_full always;
+      proxy_pass             https://$s3_bucket/wp-content/uploads/$wpsite$url_full;
+}

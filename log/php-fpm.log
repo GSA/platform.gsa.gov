@@ -1,0 +1,175 @@
+[22-Jun-2016 03:48:10] NOTICE: fpm is running, pid 171
+[22-Jun-2016 03:48:10] NOTICE: ready to handle connections
+[22-Jun-2016 03:48:10] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:01:00] NOTICE: fpm is running, pid 173
+[22-Jun-2016 04:01:00] NOTICE: ready to handle connections
+[22-Jun-2016 04:01:00] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:01:18] NOTICE: Terminating ...
+[22-Jun-2016 04:01:18] NOTICE: exiting, bye-bye!
+[22-Jun-2016 04:10:33] NOTICE: fpm is running, pid 173
+[22-Jun-2016 04:10:34] NOTICE: ready to handle connections
+[22-Jun-2016 04:10:34] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:11:45] NOTICE: Terminating ...
+[22-Jun-2016 04:11:45] NOTICE: exiting, bye-bye!
+[22-Jun-2016 04:11:51] NOTICE: fpm is running, pid 170
+[22-Jun-2016 04:11:51] NOTICE: ready to handle connections
+[22-Jun-2016 04:11:51] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:17:02] NOTICE: Terminating ...
+[22-Jun-2016 04:17:02] NOTICE: exiting, bye-bye!
+[22-Jun-2016 04:22:43] NOTICE: fpm is running, pid 171
+[22-Jun-2016 04:22:43] NOTICE: ready to handle connections
+[22-Jun-2016 04:22:43] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:25:19] NOTICE: Terminating ...
+[22-Jun-2016 04:25:19] NOTICE: exiting, bye-bye!
+[22-Jun-2016 04:25:27] NOTICE: fpm is running, pid 174
+[22-Jun-2016 04:25:27] NOTICE: ready to handle connections
+[22-Jun-2016 04:25:27] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:25:54] NOTICE: Terminating ...
+[22-Jun-2016 04:25:54] NOTICE: exiting, bye-bye!
+[22-Jun-2016 04:26:00] NOTICE: fpm is running, pid 175
+[22-Jun-2016 04:26:00] NOTICE: ready to handle connections
+[22-Jun-2016 04:26:00] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:26:34] NOTICE: Terminating ...
+[22-Jun-2016 04:26:34] NOTICE: exiting, bye-bye!
+[22-Jun-2016 04:27:01] NOTICE: fpm is running, pid 174
+[22-Jun-2016 04:27:01] NOTICE: ready to handle connections
+[22-Jun-2016 04:27:01] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:27:19] NOTICE: Terminating ...
+[22-Jun-2016 04:27:19] NOTICE: exiting, bye-bye!
+[22-Jun-2016 04:27:25] NOTICE: fpm is running, pid 170
+[22-Jun-2016 04:27:25] NOTICE: ready to handle connections
+[22-Jun-2016 04:27:25] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:28:12] NOTICE: Terminating ...
+[22-Jun-2016 04:28:12] NOTICE: exiting, bye-bye!
+[22-Jun-2016 04:32:10] NOTICE: fpm is running, pid 174
+[22-Jun-2016 04:32:10] NOTICE: ready to handle connections
+[22-Jun-2016 04:32:10] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 04:33:36] NOTICE: Terminating ...
+[22-Jun-2016 04:33:36] NOTICE: exiting, bye-bye!
+[22-Jun-2016 17:01:13] NOTICE: fpm is running, pid 171
+[22-Jun-2016 17:01:13] NOTICE: ready to handle connections
+[22-Jun-2016 17:01:13] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 17:04:00] NOTICE: Terminating ...
+[22-Jun-2016 17:04:00] NOTICE: exiting, bye-bye!
+[22-Jun-2016 20:27:58] NOTICE: fpm is running, pid 172
+[22-Jun-2016 20:27:58] NOTICE: ready to handle connections
+[22-Jun-2016 20:27:58] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 20:33:36] NOTICE: Terminating ...
+[22-Jun-2016 20:33:36] NOTICE: exiting, bye-bye!
+[22-Jun-2016 20:33:43] NOTICE: fpm is running, pid 174
+[22-Jun-2016 20:33:43] NOTICE: ready to handle connections
+[22-Jun-2016 20:33:43] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 20:41:58] NOTICE: Terminating ...
+[22-Jun-2016 20:41:58] NOTICE: exiting, bye-bye!
+[22-Jun-2016 20:42:24] NOTICE: fpm is running, pid 175
+[22-Jun-2016 20:42:24] NOTICE: ready to handle connections
+[22-Jun-2016 20:42:24] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 20:44:17] NOTICE: Terminating ...
+[22-Jun-2016 20:44:17] NOTICE: exiting, bye-bye!
+[22-Jun-2016 20:44:24] NOTICE: fpm is running, pid 176
+[22-Jun-2016 20:44:24] NOTICE: ready to handle connections
+[22-Jun-2016 20:44:24] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 20:45:52] NOTICE: Terminating ...
+[22-Jun-2016 20:45:52] NOTICE: exiting, bye-bye!
+[22-Jun-2016 20:51:16] NOTICE: fpm is running, pid 173
+[22-Jun-2016 20:51:16] NOTICE: ready to handle connections
+[22-Jun-2016 20:51:16] NOTICE: systemd monitor interval set to 10000ms
+[22-Jun-2016 21:05:34] NOTICE: Terminating ...
+[22-Jun-2016 21:05:34] NOTICE: exiting, bye-bye!
+[22-Jun-2016 21:23:34] NOTICE: fpm is running, pid 173
+[22-Jun-2016 21:23:34] NOTICE: ready to handle connections
+[22-Jun-2016 21:23:34] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:15:42] NOTICE: fpm is running, pid 174
+[24-Jun-2016 02:15:42] NOTICE: ready to handle connections
+[24-Jun-2016 02:15:42] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:20:14] NOTICE: Terminating ...
+[24-Jun-2016 02:20:14] NOTICE: exiting, bye-bye!
+[24-Jun-2016 02:25:55] NOTICE: fpm is running, pid 174
+[24-Jun-2016 02:25:55] NOTICE: ready to handle connections
+[24-Jun-2016 02:25:55] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:27:36] NOTICE: Terminating ...
+[24-Jun-2016 02:27:36] NOTICE: Reloading in progress ...
+[24-Jun-2016 02:27:36] NOTICE: Terminating ...
+[24-Jun-2016 02:27:36] NOTICE: exiting, bye-bye!
+[24-Jun-2016 02:28:15] NOTICE: fpm is running, pid 176
+[24-Jun-2016 02:28:15] NOTICE: ready to handle connections
+[24-Jun-2016 02:28:15] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:29:51] NOTICE: Terminating ...
+[24-Jun-2016 02:29:51] NOTICE: exiting, bye-bye!
+[24-Jun-2016 02:38:48] NOTICE: fpm is running, pid 173
+[24-Jun-2016 02:38:48] NOTICE: ready to handle connections
+[24-Jun-2016 02:38:48] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:42:58] NOTICE: Terminating ...
+[24-Jun-2016 02:42:58] NOTICE: exiting, bye-bye!
+[24-Jun-2016 02:43:05] NOTICE: fpm is running, pid 173
+[24-Jun-2016 02:43:05] NOTICE: ready to handle connections
+[24-Jun-2016 02:43:05] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:44:16] NOTICE: Terminating ...
+[24-Jun-2016 02:44:16] NOTICE: exiting, bye-bye!
+[24-Jun-2016 02:44:31] NOTICE: fpm is running, pid 171
+[24-Jun-2016 02:44:31] NOTICE: ready to handle connections
+[24-Jun-2016 02:44:31] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:46:47] NOTICE: Terminating ...
+[24-Jun-2016 02:46:47] NOTICE: exiting, bye-bye!
+[24-Jun-2016 02:50:16] NOTICE: fpm is running, pid 173
+[24-Jun-2016 02:50:16] NOTICE: ready to handle connections
+[24-Jun-2016 02:50:16] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:50:50] NOTICE: Terminating ...
+[24-Jun-2016 02:50:50] NOTICE: exiting, bye-bye!
+[24-Jun-2016 02:50:56] NOTICE: fpm is running, pid 173
+[24-Jun-2016 02:50:56] NOTICE: ready to handle connections
+[24-Jun-2016 02:50:56] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:51:38] NOTICE: Terminating ...
+[24-Jun-2016 02:51:38] NOTICE: exiting, bye-bye!
+[24-Jun-2016 02:51:43] NOTICE: fpm is running, pid 171
+[24-Jun-2016 02:51:43] NOTICE: ready to handle connections
+[24-Jun-2016 02:51:43] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 02:56:51] NOTICE: Terminating ...
+[24-Jun-2016 02:56:51] NOTICE: exiting, bye-bye!
+[24-Jun-2016 19:04:00] NOTICE: fpm is running, pid 172
+[24-Jun-2016 19:04:00] NOTICE: ready to handle connections
+[24-Jun-2016 19:04:00] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 19:10:49] NOTICE: Terminating ...
+[24-Jun-2016 19:10:49] NOTICE: exiting, bye-bye!
+[24-Jun-2016 19:10:56] NOTICE: fpm is running, pid 172
+[24-Jun-2016 19:10:56] NOTICE: ready to handle connections
+[24-Jun-2016 19:10:56] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 19:19:45] NOTICE: Terminating ...
+[24-Jun-2016 19:19:45] NOTICE: exiting, bye-bye!
+[24-Jun-2016 19:25:03] NOTICE: fpm is running, pid 173
+[24-Jun-2016 19:25:03] NOTICE: ready to handle connections
+[24-Jun-2016 19:25:03] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 19:32:38] NOTICE: Reloading in progress ...
+[24-Jun-2016 19:32:38] NOTICE: reloading: execvp("/usr/sbin/php-fpm7.0", {"/usr/sbin/php-fpm7.0", "-y", "/etc/php/7.0/fpm/php-fpm.conf"})
+[24-Jun-2016 19:32:38] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-www.sock"
+[24-Jun-2016 19:32:38] NOTICE: using inherited socket fd=8, "/var/run/php-fpm-www.sock"
+[24-Jun-2016 19:32:38] NOTICE: fpm is running, pid 173
+[24-Jun-2016 19:32:38] NOTICE: ready to handle connections
+[24-Jun-2016 19:32:38] NOTICE: systemd monitor interval set to 10000ms
+[24-Jun-2016 23:32:40] NOTICE: Terminating ...
+[24-Jun-2016 23:32:41] NOTICE: exiting, bye-bye!
+[27-Jun-2016 15:24:04] NOTICE: fpm is running, pid 172
+[27-Jun-2016 15:24:04] NOTICE: ready to handle connections
+[27-Jun-2016 15:24:04] NOTICE: systemd monitor interval set to 10000ms
+[27-Jun-2016 15:35:17] NOTICE: Terminating ...
+[27-Jun-2016 15:35:17] NOTICE: exiting, bye-bye!
+[27-Jun-2016 15:35:24] NOTICE: fpm is running, pid 176
+[27-Jun-2016 15:35:24] NOTICE: ready to handle connections
+[27-Jun-2016 15:35:24] NOTICE: systemd monitor interval set to 10000ms
+[27-Jun-2016 15:37:04] NOTICE: Terminating ...
+[27-Jun-2016 15:37:04] NOTICE: exiting, bye-bye!
+[27-Jun-2016 15:37:08] NOTICE: fpm is running, pid 171
+[27-Jun-2016 15:37:08] NOTICE: ready to handle connections
+[27-Jun-2016 15:37:08] NOTICE: systemd monitor interval set to 10000ms
+[27-Jun-2016 15:37:46] NOTICE: Terminating ...
+[27-Jun-2016 15:37:46] NOTICE: exiting, bye-bye!
+[27-Jun-2016 15:37:52] NOTICE: fpm is running, pid 173
+[27-Jun-2016 15:37:52] NOTICE: ready to handle connections
+[27-Jun-2016 15:37:52] NOTICE: systemd monitor interval set to 10000ms
+[27-Jun-2016 15:44:04] NOTICE: Terminating ...
+[27-Jun-2016 15:44:04] NOTICE: exiting, bye-bye!
+[27-Jun-2016 15:44:10] NOTICE: fpm is running, pid 170
+[27-Jun-2016 15:44:10] NOTICE: ready to handle connections
+[27-Jun-2016 15:44:10] NOTICE: systemd monitor interval set to 10000ms
+[27-Jun-2016 15:45:11] NOTICE: Terminating ...
+[27-Jun-2016 15:45:11] NOTICE: exiting, bye-bye!

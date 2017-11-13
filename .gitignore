@@ -1,0 +1,7 @@
+.DS_Store
+dev.env
+dev.env.tmpl
+prod.env
+data/*
+debug.log
+*.tgz

@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Anti CSRF\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-11 23:04+0100\n"
+"PO-Revision-Date: 2012-09-11 23:05+0100\n"
+"Last-Translator: Juliobox <juliobosk@gmail.com>\n"
+"Language-Team: Juliobox <juliobosk@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: c:\\Users\\Julio\\Dropbox\\BAW\\plugins\\baw-anti-csrf_repo\n"
+
+#: c:\Users\Julio\Dropbox\BAW\plugins\baw-anti-csrf_repo/trunk/bawac.php:19
+msgid "You are attempting to visit this page:"
+msgstr "Vous essayez de visiter cette page : "
+
+#: c:\Users\Julio\Dropbox\BAW\plugins\baw-anti-csrf_repo/trunk/bawac.php:19
+msgid "Do you really want to visit this page ?<br />"
+msgstr "Etes-vous sûr(e) de vouloir visiter cette page ?<br />"
+
+#: c:\Users\Julio\Dropbox\BAW\plugins\baw-anti-csrf_repo/trunk/bawac.php:20
+#, php-format
+msgid "<a href=\"%s\"><img src=\"%s\" alt=\"Yes\" title=\"Yes\" /> Yes</a><br /><a href=\"%s\"><img src=\"%s\" alt=\"No\" title=\"No\" /> No</a>"
+msgstr "<a href=\"%s\"><img src=\"%s\" alt=\"Oui\" title=\"Oui\" /> Oui</a><br /><a href=\"%s\"><img src=\"%s\" alt=\"Non\" title=\"Non\" /> Non</a>"
+
+#: c:\Users\Julio\Dropbox\BAW\plugins\baw-anti-csrf_repo/trunk/bawac.php:61
+#, php-format
+msgid "<b>%s</b><br /><br />If you read this, maybe something goes wrong with the plugin \"BAW Anti CSRF\".<br /><br />Please, copy/paste this into a new support post here : %s<br /><textarea rows=\"5\" cols=\"85\">%s</textarea><br /><em>Feel free to add or remove informations.</em><br /><br />You can deactivate the plugin with this link if you need to: %s<br /><br />Thank you!"
+msgstr "<b>%s</b><br /><br />Si vous lisez ceci, quelquechose ne va surement pas avec le plugin \"BAW Anti CSRF\".<br /><br />Merci de copier/coller ce qui suit dans un nouveau post sur le support ici : %s<br /><textarea rows=\"4\" cols=\"85\">%s</textarea><br /><em>Sentez vous libre d'ajouter ou supprimer des informations.</em><br /><br />Vous pouvez désactivater le plugin avec ce lien si besoin : %s<br /><br />Merci !"
+
+#: c:\Users\Julio\Dropbox\BAW\plugins\baw-anti-csrf_repo/trunk/bawac.php:66
+msgid "Are you sure you want to do this?"
+msgstr "Etes-vous sûr(e) de vouloir faire cela ?"
+
+#: c:\Users\Julio\Dropbox\BAW\plugins\baw-anti-csrf_repo/trunk/bawac.php:67
+msgid "BAW Anti CSRF Free Support"
+msgstr "BAW Anti CSRF Support Gratuit"
+
+#: c:\Users\Julio\Dropbox\BAW\plugins\baw-anti-csrf_repo/trunk/bawac.php:74
+msgid "Deactivate"
+msgstr "Désactiver"
+
+#: c:\Users\Julio\Dropbox\BAW\plugins\baw-anti-csrf_repo/trunk/bawac.php:76
+msgid "BAW Anti CSRF &rsaquo; Error"
+msgstr "BAW Anti CSRF &rsaquo; Erreur"
+
+#: c:\Users\Julio\Dropbox\BAW\plugins\baw-anti-csrf_repo/trunk/bawac.php:154
+msgid "Site protected by <a href=\"http://baw.li/anticsrf\"><b>BAW Anti-CSRF</b></a>"
+msgstr "Site protégé par <a href=\"http://baw.li/anticsrf\"><b>BAW Anti-CSRF</b></a>"
+
+#, fuzzy
+#~ msgid ""
+#~ "BAW Anti CSRF : Clic on this link to continue wihout errors <a href=\"%s"
+#~ "\">%s</a>"
+#~ msgstr ""
+#~ "BAW Anti CSRF : Cliquez sur ce lien pour continuer sans erreurs <a href="
+#~ "\"%s\">%s</a>"
+
+#~ msgid "Dashboard"
+#~ msgstr "Tableau de bord"

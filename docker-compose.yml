@@ -1,0 +1,22 @@
+version: '2'
+services:
+   web:
+     build:
+       dockerfile: docker/wordpress/Dockerfile
+       context: .
+     ports:
+       - "80:80"
+       - "443:443"
+     volumes:
+       - ./docker/wordpress/rootfs/etc/nginx/sites-include/platform.gsa.gov:/etc/nginx/sites-include/platform.gsa.gov
+       - ./docker/wordpress/rootfs/etc/nginx/sites-include/00-wordpress-ms-s3:/etc/nginx/sites-include/00-wordpress-ms-s3
+       - ./docker/wordpress/rootfs/etc/nginx/conf.d/wordpress-ms-sites-map.conf:/etc/nginx/conf.d/wordpress-ms-sites-map.conf
+       - ./docker/wordpress/rootfs/etc/php/7.0/fpm/conf.d/zz-local-php.ini:/etc/php/7.0/fpm/conf.d/zz-local-php.ini
+       #- ./docker/wordpress/rootfs/etc/php/7.0/fpm/pool.d/www.conf:/etc/php/7.0/fpm/pool.d/www.conf
+       #- ./app/platform.gsa.gov/wp-config.php:/var/www/html/wp-config.php
+       - ./app/platform.gsa.gov:/var/www/html
+       #- ./data/uploads:/var/www/html/wp-content/uploads
+     env_file:
+       - dev.env
+     extra_hosts:
+       - "platform.gsa.local:127.0.0.1"
