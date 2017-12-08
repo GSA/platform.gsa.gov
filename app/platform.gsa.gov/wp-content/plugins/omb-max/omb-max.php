@@ -9,7 +9,6 @@ Author URI: http://sites.usa.gov
 */
 
 require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'options-page.php');
-require_once 'OMBMax.class.php';
 require_once( ABSPATH . "wp-includes/pluggable.php" );
 
 register_deactivation_hook( __FILE__, 'ombmax_plugin_uninstall');
@@ -292,6 +291,7 @@ function add_init_omb_max() {
 
 	if($GLOBALS['pagenow'] == 'wp-login.php')
 	{
+		require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'OMBMax.class.php');
 		$options = get_option('omb_max_options','');
 		phpCAS::setFixedServiceURL(get_site_url().'/wp-login.php?ombAuth=1&p=1');
 		if(isset($_GET['ombAuth']) && @$_GET['ombAuth'] == '1')
@@ -467,6 +467,7 @@ function add_init_omb_max() {
 	 * Add a link to the login form to initiate external authentication.
 	 */
 	function add_login_link() {
+		require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'OMBMax.class.php');
 		//global $redirect_to;
 		$redirect_to = $_GET['redirect_to'];
 		//$login_uri = $this->_generate_uri($this->options['login_uri'], wp_login_url($redirect_to));
