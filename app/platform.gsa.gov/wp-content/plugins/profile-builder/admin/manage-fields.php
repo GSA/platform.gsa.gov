@@ -187,7 +187,7 @@ function wppb_manage_fields_submenu(){
     );
     new Wordpress_Creation_Kit_PB( $args );
 }
-add_action( 'init', 'wppb_manage_fields_submenu', 10 );
+add_action( 'init', 'wppb_manage_fields_submenu', 11 );
 
 /**
  * Function that prepopulates the manage fields list with the default fields of WP

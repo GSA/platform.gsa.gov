@@ -159,7 +159,7 @@ if ( is_admin() ){
  * @param string $message_from
  *
  */
-function wppb_mail( $to, $subject, $message, $message_from = null, $context = null ) {
+function wppb_mail( $to, $subject, $message, $message_from = null, $context = null, $headers = '' ) {
 	$to = apply_filters( 'wppb_send_email_to', $to );
 	$send_email = apply_filters( 'wppb_send_email', true, $to, $subject, $message, $context );
 
@@ -171,7 +171,9 @@ function wppb_mail( $to, $subject, $message, $message_from = null, $context = nu
 		//we add this filter to enable html encoding
 		add_filter( 'wp_mail_content_type', create_function( '', 'return "text/html"; ' ) );
 
-		$sent = wp_mail( $to , html_entity_decode( htmlspecialchars_decode( $subject, ENT_QUOTES ), ENT_QUOTES ), $message );
+		$atts = apply_filters( 'wppb_mail', compact( 'to', 'subject', 'message', 'headers' ), $context );
+
+		$sent = wp_mail( $atts['to'] , html_entity_decode( htmlspecialchars_decode( $atts['subject'], ENT_QUOTES ), ENT_QUOTES ), $atts['message'], $atts['headers'] );
 
 		do_action( 'wppb_after_sending_email', $sent, $to, $subject, $message, $send_email, $context );
 
@@ -564,9 +566,23 @@ function wppb_check_password_strength(){
 function wppb_password_length_text(){
     $wppb_generalSettings = get_option( 'wppb_general_settings' );
     if( !empty( $wppb_generalSettings['minimum_password_length'] ) ){
-        return sprintf(__('Minimum length of %d characters', 'profile-builder'), $wppb_generalSettings['minimum_password_length']);
+        return sprintf(__('Minimum length of %d characters.', 'profile-builder'), $wppb_generalSettings['minimum_password_length']);
     }
     return '';
+}
+
+/* function to output password strength requirements text */
+function wppb_password_strength_description() {
+	$wppb_generalSettings = get_option( 'wppb_general_settings' );
+
+	if( ! empty( $wppb_generalSettings['minimum_password_strength'] ) ) {
+		$password_strength_text = array( 'short' => __( 'Very Weak', 'profile-builder' ), 'bad' => __( 'Weak', 'profile-builder' ), 'good' => __( 'Medium', 'profile-builder' ), 'strong' => __( 'Strong', 'profile-builder' ) );
+		$password_strength_description = '<br>'. sprintf( __( 'The password must have a minimum strength of %s.', 'profile-builder' ), $password_strength_text[$wppb_generalSettings['minimum_password_strength']] );
+
+		return $password_strength_description;
+	} else {
+		return '';
+	}
 }
 
 /**
@@ -1007,4 +1023,23 @@ function wppb_build_redirect( $redirect_url, $redirect_delay, $redirect_type = N
  */
 function wppb_sanitize_value( $string ){
 	return preg_replace( '/<script\b[^>]*>(.*?)<\/script>/is', '', $string );
+}
+
+/**
+ * Function that receives a user role and returns it's label.
+ * Returns the original role if not found.
+ *
+ * @since v.2.7.1
+ *
+ * @param string $role
+ *
+ * @return string
+ */
+function wppb_get_role_name($role){
+    global $wp_roles;
+
+    if ( array_key_exists( $role, $wp_roles->role_names ) )
+        return $wp_roles->role_names[$role];
+
+    return $role;
 }

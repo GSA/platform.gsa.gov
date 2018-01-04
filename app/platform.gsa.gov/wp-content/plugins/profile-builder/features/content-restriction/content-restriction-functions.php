@@ -158,6 +158,7 @@ function wppb_content_restriction_post_redirect() {
 }
 add_action( 'wp', 'wppb_content_restriction_post_redirect' );
 
+/* Function that searches and replaces merge tags with their values */
 function wppb_content_restriction_merge_tags( $text, $user_info, $post_id = 0 ) {
 
     $merge_tags = apply_filters( 'wppb_content_restriction_merge_tags', array( 'display_name', 'unrestricted_user_roles', 'current_user_role' ) );
@@ -172,6 +173,7 @@ function wppb_content_restriction_merge_tags( $text, $user_info, $post_id = 0 ) 
 
 }
 
+/* Add functionality for display_name tag */
 function wppb_content_restriction_tag_display_name( $value, $user_info, $post_id = 0 ) {
 
     if( ! empty( $user_info->display_name ) ) {
@@ -185,6 +187,7 @@ function wppb_content_restriction_tag_display_name( $value, $user_info, $post_id
 }
 add_filter( 'wppb_content_restriction_merge_tag_display_name', 'wppb_content_restriction_tag_display_name', 10, 3 );
 
+/* Add functionality for unrestricted_user_roles tag */
 function wppb_content_restriction_tag_unrestricted_user_roles( $value, $user_info, $post_id = 0 ) {
 
     if( $post_id != 0 ) {
@@ -204,6 +207,7 @@ function wppb_content_restriction_tag_unrestricted_user_roles( $value, $user_inf
 }
 add_filter( 'wppb_content_restriction_merge_tag_unrestricted_user_roles', 'wppb_content_restriction_tag_unrestricted_user_roles', 10, 3 );
 
+/* Add functionality for current_user_role tag */
 function wppb_content_restriction_tag_current_user_role( $value, $user_info, $post_id = 0 ) {
 
     if( ! empty( $user_info ) && ! empty( $user_info->roles ) ) {
@@ -216,3 +220,70 @@ function wppb_content_restriction_tag_current_user_role( $value, $user_info, $po
 
 }
 add_filter( 'wppb_content_restriction_merge_tag_current_user_role', 'wppb_content_restriction_tag_current_user_role', 10, 3 );
+
+/* Content restriction shortcode */
+function wppb_content_restriction_shortcode( $atts, $content = null ) {
+
+    $args = shortcode_atts(
+        array(
+            'user_roles'    => array(),
+            'display_to'    => '',
+            'message'       => ''
+        ),
+        $atts
+    );
+
+    // Message to replace the content of checks do not match
+    if( ! empty( $args['message'] ) ) {
+        $message = '<span class="wppb-shortcode-restriction-message">' . $args['message'] . '</span>';
+    } else {
+        $type = ( is_user_logged_in() ? 'logged_in' : 'logged_out' );
+        $message = wpautop( wppb_get_restriction_content_message( $type ) );
+    }
+
+    /*
+     * Filter the message
+     *
+     * @param string $message   - the current message, whether it is the default one from the settings or
+     *                            the one set in the shortcode attributes
+     * @param array  $args      - the shortcode attributes
+     *
+     */
+    $message = apply_filters( 'wppb_content_restriction_shortcode_message', $message, $args );
+
+    if( is_user_logged_in() ) {
+        // Show for administrators
+        if( current_user_can( 'manage_options' ) ) {
+            return do_shortcode( $content );
+        }
+
+        if( $args['display_to'] == 'not_logged_in' ) {
+            return $message;
+        }
+
+        if( ! empty( $args['user_roles'] ) ) {
+            $user_roles = array_map( 'trim', explode( ',', $args['user_roles'] ) );
+            $user_data = get_userdata( get_current_user_id() );
+
+            if( ! empty( $user_data->roles ) ) {
+                $common_user_roles = array_intersect( $user_roles, $user_data->roles );
+
+                if( ! empty( $common_user_roles ) ) {
+                    return do_shortcode( $content );
+                } else {
+                    return $message;
+                }
+            }
+        } else {
+            return do_shortcode( $content );
+        }
+    } else {
+        if( $args['display_to'] == 'not_logged_in' ) {
+            return do_shortcode( $content );
+        } else {
+            return $message;
+        }
+    }
+
+}
+add_shortcode( 'wppb-restrict', 'wppb_content_restriction_shortcode' );

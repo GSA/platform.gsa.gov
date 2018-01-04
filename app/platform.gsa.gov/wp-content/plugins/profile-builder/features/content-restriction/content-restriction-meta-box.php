@@ -146,7 +146,7 @@ function wppb_content_restriction_meta_box_output( $post ) {
 
 }
 
-function wppb_content_restriction_save_data( $post_id, $post ) {
+function wppb_content_restriction_save_data( $post_id ) {
 
     if( empty( $_POST['wppb_content_restriction_token'] ) || ! wp_verify_nonce( $_POST['wppb_content_restriction_token'], 'wppb_meta_box_single_content_restriction_nonce' ) ) {
         return;
@@ -197,4 +197,5 @@ function wppb_content_restriction_save_data( $post_id, $post ) {
     update_post_meta( $post_id, 'wppb-content-restrict-message-logged_in', ( ! empty( $_POST['wppb-content-restrict-message-logged_in'] ) ? wp_kses_post( $_POST['wppb-content-restrict-message-logged_in'] ) : '' ) );
 
 }
-add_action( 'save_post', 'wppb_content_restriction_save_data', 10, 2 );
+add_action( 'save_post', 'wppb_content_restriction_save_data' );
+add_action( 'edit_attachment', 'wppb_content_restriction_save_data' );

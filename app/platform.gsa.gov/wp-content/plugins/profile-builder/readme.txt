@@ -1,10 +1,10 @@
 ﻿=== User registration & user profile - Profile Builder ===
 Contributors: cozmoslabs, reflectionmedia, sareiodata, adispiac, madalin.ungureanu, iova.mihai, barinagabriel
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
-Tags: user registration, user profile, user registration form, user fields, extra user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction
+Tags: user registration, user profile, user registration form, user fields, extra user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
-Tested up to: 4.8.3
-Stable tag: 2.6.9
+Tested up to: 4.9.1
+Stable tag: 2.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,10 +14,13 @@ Simple to use profile plugin allowing front-end login, user registration and edi
 
 **Profile Builder is WordPress user registration done right.**
 
+Easy to use profile plugin allowing front-end login, user registration and edit profile by using shortcodes.
+
+Restrict Content based on user role or logged in status & manage user roles and capabilities using the built in Role Editor.
+
 **Like this plugin?** Consider leaving a [5 star review](https://wordpress.org/support/view/plugin-reviews/profile-builder?filter=5).
 
-It lets you customize your website by adding a front-end menu for all your users, 
-giving them a more flexible way to modify their user profile or register users (front-end user registration).
+It lets you customize your website by adding a front-end menu for all your users, giving them a more flexible way to modify their user profile or register users (front-end user registration).
 Users with administrator rights can customize basic user fields or add custom user fields to the front-end forms.
 
 To achieve this, simply create a new page and give it an intuitive name(i.e. Edit Profile).
@@ -32,6 +35,7 @@ You can use the following shortcode list:
 * **[wppb-logout]** - to add logout functionality.
 * **[wppb-register]** - register users via a front-end register form.
 * **[wppb-recover-password]** - to add a password recovery form.
+* **[wppb-restrict]**Content to restrict**[/wppb-restrict]** - to restrict blocks of content
 
 Users with administrator rights have access to the following features:
 
@@ -50,7 +54,7 @@ Users with administrator rights have access to the following features:
 * role editor: add, remove, clone and edit roles and also capabilities for these roles.
 * reacaptcha for Profile Builder forms and WordPress default forms
 * user role select field on register and edit profile forms
-* content restriction based on user role
+* content restriction - restrict content based on user role or logged in status
 
 **PROFILE BUILDER PRO**
 
@@ -159,6 +163,25 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 12. Role Editor
 
 == Changelog ==
+= 2.7.2 =
+* Updated translation file.
+* Fixed issue with login token generating duplicated ID validation error
+
+= 2.7.1 =
+* Fixed an issue with the Biographical Info field that was showing html tags
+* Fixed Content Restriction preview post before more-tag issue
+* Fixed Roles Editor conflict with Dokan plugin
+* Fixed redirect_priority='top' not working after login
+* Fixed back-end login with after login redirect set to http_referer
+
+= 2.7.0 = 
+* Added [wppb-restrict] shortcode for Content Restriction
+* Password Strength Indicator improvements
+* Added an extra filter (wppb_mail) to wppb_mail function that gives the possibility to also send headers
+* Updated German translation files.
+* Added context to the 3 wppb_mail calls so we can identify the recover password emails being sent using the filters/actions from wppb_mail.
+* Fixed content restriction meta-box for attachments
+
 = 2.6.9 =
 * Implemented Content Restriction feature
 * Added nonce field on Profile Builder login form for security check

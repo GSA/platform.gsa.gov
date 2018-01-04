@@ -65,6 +65,10 @@ function wppb_basic_info_content() {
 				<h3><?php _e( 'Email Confirmation', 'profile-builder' ); ?></h3>
 				<p><?php _e( 'Make sure users sign up with genuine emails. On registration users will receive a notification to confirm their email address.', 'profile-builder' ); ?></p>
 			</div>
+            <div>
+                <h3><?php _e( 'Content Restriction', 'profile-builder' ); ?></h3>
+                <p><?php _e( 'Restrict users from accessing certain pages, posts or custom post types based on user role or logged-in status.', 'profile-builder' ); ?></p>
+            </div>
 			<div>
 				<h3><?php _e( 'Minimum Password Length and Strength Meter', 'profile-builder' ); ?></h3>
 				<p><?php _e( 'Eliminate weak passwords altogether by setting a minimum password length and enforcing a certain password strength.', 'profile-builder' ); ?></p>

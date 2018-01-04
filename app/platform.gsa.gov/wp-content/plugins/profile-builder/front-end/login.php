@@ -15,7 +15,7 @@ function wppb_login_form_bottom( $form_part, $args ){
         $form_part .= '<input type="hidden" name="wppb_lostpassword_url" value="'.esc_url( $args['lostpassword_url'] ).'"/>';
 		$form_part .= '<input type="hidden" name="wppb_redirect_priority" value="'. esc_attr( isset( $args['redirect_priority'] ) ? $args['redirect_priority'] : '' ) .'"/>';
 		$form_part .= '<input type="hidden" name="wppb_referer_url" value="'.esc_url( isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : '' ).'"/>';
-		$form_part .= wp_nonce_field( 'wppb_login', 'CSRFToken' );
+		$form_part .= wp_nonce_field( 'wppb_login', 'CSRFToken', true, false );
 	}
 
     $form_part .= '<input type="hidden" name="wppb_redirect_check" value="true"/>';
@@ -115,7 +115,7 @@ if( isset( $wppb_generalSettings['loginWith'] ) && ( $wppb_generalSettings['logi
 // login redirect filter. used to redirect from wp-login.php if it errors out
 function wppb_login_redirect( $redirect_to, $requested_redirect_to, $user ){
     // custom redirect after login on default wp login form
-    if( ! is_wp_error( $user ) ) {
+    if( ! isset( $_POST['wppb_login'] ) && ! is_wp_error( $user ) ) {
         // we don't have an error make sure to remove the error from the query arg
         $redirect_to = remove_query_arg( 'loginerror', $redirect_to );
 
