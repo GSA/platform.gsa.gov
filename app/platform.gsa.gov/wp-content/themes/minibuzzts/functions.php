@@ -43,3 +43,16 @@ require get_template_directory() . '/includes/customizer.php';
 require get_template_directory() . '/includes/theme-plugins.php';
 
 
+/**
+ * Custom FEB Functions.
+ *
+ */
+
+// Add Custom Post Types Function
+require_once ('feb-post-types.php' );
+// Add Custom Shortcodes
+require_once ('feb-shortcodes.php' );
+// Add FEB Specific Functions
+require_once ('feb-functions.php' );
+// Add FEB Emergency Contact Functions
+require_once ('feb-emergencycontact.php' );
