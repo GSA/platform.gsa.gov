@@ -3,8 +3,8 @@ Contributors: cozmoslabs, reflectionmedia, sareiodata, adispiac, madalin.ungurea
 Donate link: http://www.cozmoslabs.com/wordpress-profile-builder/
 Tags: user registration, user profile, user registration form, user fields, extra user fields, edit profile, user custom fields, front-end login, front-end edit profile, front-end user registration, email confirmation, login form, content restriction, restrict content
 Requires at least: 3.1
-Tested up to: 4.9.1
-Stable tag: 2.7.2
+Tested up to: 4.9.2
+Stable tag: 2.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -163,6 +163,16 @@ This plugin adds/removes user fields in the front-end. Both default and extra pr
 12. Role Editor
 
 == Changelog ==
+= 2.7.4 =
+* Improved admin interface speed in most cases by up to 100% by reducing the number of ajax calls
+* Improved the admin interface with small visual tweaks and bug-fixes
+* Fixed bug with email not showing up for unconfirmed users table listing in backend
+
+= 2.7.3 =
+* Now we save the registration date only in GMT time to avoid confusions. We have a filter to be able to save to local time: wppb_return_local_time_for_register
+* Added functionality to update meta name for existing fields in the database if they change. It is off by default but can be activated with the filter wppb_update_field_meta_key_in_db
+* Added a mention to Roles Editor in the Basic Info Page
+
 = 2.7.2 =
 * Updated translation file.
 * Fixed issue with login token generating duplicated ID validation error
