@@ -77,6 +77,10 @@ function wppb_basic_info_content() {
 				<h3><?php _e( 'Login with Email or Username', 'profile-builder' ); ?></h3>
 				<p><?php _e( 'Allow users to log in with their email or username when accessing your site.', 'profile-builder' ); ?></p>
 			</div>
+			<div style="clear:left;">
+				<h3><?php _e( 'Roles Editor', 'profile-builder' ); ?></h3>
+				<p><?php _e( 'Add, remove, clone and edit roles and also capabilities for these roles.', 'profile-builder' ); ?></p>
+			</div>
 		</div>
 
 		<?php

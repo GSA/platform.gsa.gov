@@ -783,19 +783,28 @@ function wppb_handle_meta_name( $meta_name ){
 
 
 // change User Registered date and time according to timezone selected in WordPress settings
-function wppb_get_date_by_timezone() {
-	$wppb_wp_timezone = get_option( 'timezone_string' );
+function wppb_get_register_date() {
 
-	if( ! empty( $wppb_wp_timezone ) ) {
-		date_default_timezone_set( $wppb_wp_timezone );
-		$wppb_get_date = date( "Y-m-d G:i:s" );
-	} else {
-		$wppb_wp_gmt_offset = get_option( 'gmt_offset' );
-		$wppb_gmt_offset = $wppb_wp_gmt_offset * 60 * 60;
-		$wppb_get_date = gmdate( "Y-m-d G:i:s", time() + $wppb_gmt_offset );
+	$time_format = "Y-m-d G:i:s";
+	$wppb_get_date = date_i18n( $time_format, false, true );
+
+	if( apply_filters( 'wppb_return_local_time_for_register', false ) ){
+		$wppb_get_date = date_i18n( $time_format );
 	}
 
 	return $wppb_get_date;
+}
+
+/**
+ * Function that ads the gmt offset from the general settings to a unix timestamp
+ * @param $timestamp
+ * @return mixed
+ */
+function wppb_add_gmt_offset( $timestamp ) {
+	if( apply_filters( 'wppb_add_gmt_offset', true ) ){
+		$timestamp = $timestamp + ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS );
+	}
+	return $timestamp;
 }
 
 /**
