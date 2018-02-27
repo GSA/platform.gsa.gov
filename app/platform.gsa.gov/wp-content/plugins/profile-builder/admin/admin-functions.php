@@ -207,3 +207,20 @@ function wppb_admin_rate_us( $footer_text ) {
     }
 }
 add_filter('admin_footer_text','wppb_admin_rate_us');
+
+/* In plugin notifications */
+add_action( 'admin_init', 'wppb_add_plugin_notifications' );
+function wppb_add_plugin_notifications() {
+    /* initiate the plugin notifications class */
+    $notifications = WPPB_Plugin_Notifications::get_instance();
+    /* this must be unique */
+    $notification_id = 'wppb_new_add_on_woocommerce';
+
+    $message  = '<img style="float: left; margin: 10px 12px 10px 0; max-width: 100px;" src="https://www.cozmoslabs.com/wp-content/themes/cozmiclight/img/pb_addon_small_woosync.png" alt="WooSync Addon"/>';
+    $message .= '<p style="margin-top: 16px;">' . __( 'Extend WooCommerce checkout page with support for all the Profile Builder Pro custom field types, conditional logic and repeater fields with the latest <strong>WooSync addon</strong> for Profile Builder.', 'profile-builder' ) . '</p>';
+    // be careful to use wppb_dismiss_admin_notification as query arg
+    $message .= '<p><a href="' . add_query_arg( array( 'page' => 'profile-builder-add-ons', 'wppb_dismiss_admin_notification' => $notification_id ), admin_url( 'admin.php' ) ) . '" class="button-primary">' . __( 'Check it out!', 'profile-builder' ) . '</a></p>';
+    $message .= '<a href="' . add_query_arg( array( 'wppb_dismiss_admin_notification' => $notification_id ) ) . '" type="button" class="notice-dismiss"><span class="screen-reader-text">' . __( 'Dismiss this notice.', 'profile-builder' ) . '</span></a>';
+
+    $notifications->add_notification( $notification_id, $message, 'wppb-notice wppb-narrow notice notice-info', true, array( 'profile-builder-add-ons' ) );
+}

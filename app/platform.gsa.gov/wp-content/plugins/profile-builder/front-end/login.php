@@ -15,7 +15,7 @@ function wppb_login_form_bottom( $form_part, $args ){
         $form_part .= '<input type="hidden" name="wppb_lostpassword_url" value="'.esc_url( $args['lostpassword_url'] ).'"/>';
 		$form_part .= '<input type="hidden" name="wppb_redirect_priority" value="'. esc_attr( isset( $args['redirect_priority'] ) ? $args['redirect_priority'] : '' ) .'"/>';
 		$form_part .= '<input type="hidden" name="wppb_referer_url" value="'.esc_url( isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : '' ).'"/>';
-		$form_part .= wp_nonce_field( 'wppb_login', 'CSRFToken', true, false );
+		$form_part .= wp_nonce_field( 'wppb_login', 'CSRFToken-wppb', true, false );
 	}
 
     $form_part .= '<input type="hidden" name="wppb_redirect_check" value="true"/>';
@@ -315,16 +315,15 @@ function wppb_front_end_login( $atts ){
 }
 
 function wppb_login_security_check( $user, $password ) {
-
-    if( isset( $_POST['wppb_login'] ) ) {
-        if( ! isset( $_POST['CSRFToken'] ) || ! wp_verify_nonce( $_POST['CSRFToken'], 'wppb_login' ) ) {
-            $errorMessage = __( 'You are not allowed to do this.', 'profile-builder' );
-
-            return new WP_Error( 'wppb_login_csrf_token_error', $errorMessage );
-        }
-    }
+	if( apply_filters( 'wppb_enable_csrf_token_login_form', false ) ){
+		if (isset($_POST['wppb_login'])) {
+			if (!isset($_POST['CSRFToken-wppb']) || !wp_verify_nonce($_POST['CSRFToken-wppb'], 'wppb_login')) {
+				$errorMessage = __('You are not allowed to do this.', 'profile-builder');
+				return new WP_Error('wppb_login_csrf_token_error', $errorMessage);
+			}
+		}
+	}
 
     return $user;
-
 }
 add_filter( 'wp_authenticate_user', 'wppb_login_security_check', 10, 2 );

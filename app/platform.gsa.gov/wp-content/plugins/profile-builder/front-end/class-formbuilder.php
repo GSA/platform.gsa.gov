@@ -259,6 +259,11 @@ class Profile_Builder_Form_Creator{
 		$field_check_errors = array();
 
 		if( isset( $_REQUEST['action'] ) && $_REQUEST['form_name'] == $this->args['form_name'] ) {
+            if( ! isset( $_POST[$this->args['form_type'].'_'. $this->args['form_name'] .'_nonce_field'] ) || ! wp_verify_nonce( $_POST[$this->args['form_type'].'_'. $this->args['form_name'] .'_nonce_field'], 'wppb_verify_form_submission' ) ) {
+                echo '<span class="wppb-form-error wppb-error">'. __( 'You are not allowed to do this.', 'profile-builder' ) . '</span>';
+                return;
+            }
+
 			$field_check_errors = $this->wppb_test_required_form_values( $_REQUEST );			
 			if( empty( $field_check_errors ) ) {
 
@@ -437,7 +442,7 @@ class Profile_Builder_Form_Creator{
 				}
 				?>
 			</p><!-- .form-submit -->
-			<?php wp_nonce_field( 'verify_form_submission', $this->args['form_type'].'_nonce_field' ); ?>
+			<?php wp_nonce_field( 'wppb_verify_form_submission', $this->args['form_type'].'_'. $this->args['form_name'] .'_nonce_field' ); ?>
 		</form>
 		<?php
 		// use this action hook to add extra content after the register form
