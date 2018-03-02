@@ -109,7 +109,14 @@ function wppb_user_role_handler( $output, $form_location, $field, $user_id, $fie
 
         }
         else{
-            $output .= '<input type="hidden" disabled="disabled" readonly="readonly" value="'.$input_value.'">';
+            if( !empty( $input_value_multiple ) ){
+                foreach( $input_value_multiple as $input_value_multi ){
+                    $output .= '<input type="hidden" disabled="disabled" readonly="readonly" value="'.$input_value_multi.'">';
+                }
+            }
+            else {
+                $output .= '<input type="hidden" disabled="disabled" readonly="readonly" value="' . $input_value . '">';
+            }
         }
 
         return apply_filters( 'wppb_'.$form_location.'_user_role_custom_field_'.$field['id'], $output, $form_location, $field, $user_id, $field_check_errors, $request_data, $input_value, $input_value_multiple );

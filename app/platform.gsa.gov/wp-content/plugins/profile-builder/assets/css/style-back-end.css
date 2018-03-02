@@ -667,3 +667,28 @@ p .wppb-button-free {
 .mb-table-container .wck-state-highlight{
     height:45px;
 }
+
+/**************************************************/
+/* Extra styling for admin notices
+/**************************************************/
+div.wppb-notice {
+    position: relative;
+}
+
+div.wppb-notice:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+div.wppb-notice.wppb-narrow {
+    max-width: 825px;
+}
+
+div.wppb-notice .notice-dismiss {
+    text-decoration: none;
+}
+
+.wrap div.wppb-admin-notice {
+    margin-bottom: 0;
+}
