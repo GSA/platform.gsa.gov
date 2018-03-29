@@ -2352,4 +2352,99 @@ ul.page-numbers li a:hover,
 
 .wpcf7-submit { margin: 0;}
 
+div#outerbeforecontent {
+    margin-top: 189px;
+}
 
+div#logo {
+    text-align: center;
+    float: none;
+}
+
+h2.site-description {
+    font-size:  1.4rem;
+    margin-top:  1rem;
+}
+nav#top-nav-wrap {
+    text-align:  center;
+    border: none;
+}
+.sf-menu > li {
+    float:  none;
+    display:  inline-block;
+    text-transform: uppercase;
+}
+.sf-menu .current_page_item > a, .sf-menu .current-menu-item > a {
+border-top: none;
+color: #2d84b6;
+}
+.sf-menu > li:before {
+content: none;}
+.sf-menu a {
+    color:  #666;
+    font-size: 1.4rem;
+}
+.sf-menu ul {
+    border-top: 3px solid #2d84b6;
+}
+.sf-menu li li {
+border-bottom: none;
+}
+.feb-fixed-header-container {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.feb-header-inner {
+    width: 100%;
+    max-width: 1000px;
+    background: white;
+    margin: auto;
+}
+
+.feb-fixed{
+	height: 150px;
+	max-height: 150px;
+	border-bottom: 1px solid black;
+}
+
+.feb-fixed header#top {
+	padding: 0;
+}
+
+.feb-fixed div#logo img {
+	margin-top:5px;
+	max-height: 100%;
+}
+
+.feb-fixed div#logo {
+	max-height: 70px;
+	height: 70px;
+}
+
+@media only screen and (max-width: 480px) {
+    .feb-fixed-header-container {
+        position: static;
+   }
+   .feb-header-inner {
+        width: 100%;
+    }
+div#outerbeforecontent {
+    margin-top: auto;
+}
+}
+@media only screen and (max-width: 767px) {
+    .feb-header-inner {
+        max-width: 400px;
+    }
+    div#outerbeforecontent {
+    margin-top: 280px;
+}
+}
+@media only screen and (max-width: 1024px) {
+    .feb-header-inner {
+        width: 95%;
+    }
+}

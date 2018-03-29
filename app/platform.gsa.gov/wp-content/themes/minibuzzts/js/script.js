@@ -12,4 +12,19 @@ jQuery(document).ready(function($) {
 		else
 			$(this).text('More');
 	});
+
+    //caches a jQuery object containing the header element
+    var header = $(".feb-header-inner");
+    var headerlogo = $(".feb-header-inner div#logo");
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 200) {
+            header.addClass("feb-fixed");
+            headerlogo.addClass("feb-logo-small");
+        } else {
+            header.removeClass("feb-fixed");
+            headerlogo.removeClass("feb-logo-small");
+        }
+    });
 });

@@ -27,14 +27,14 @@
 	<div id="outercontainer">
     
         <!-- HEADER -->
-        <div id="outerheader">
+        <div id="outerheader" class="feb-fixed-header-container">
         	<div id="headercontainer">
-                <div class="container">
+                <div class="container feb-header-inner">
                 <div class="row">
                     <div class="twelve columns">
                     <header id="top">
                     		<div id="logo">
-                        	<?php minibuzzts_the_custom_logo(); ?> 
+				<?php minibuzzts_the_custom_logo(); ?>
 							</div>
                                                        
                         <div class="clear"></div>
