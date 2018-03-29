@@ -2352,10 +2352,6 @@ ul.page-numbers li a:hover,
 
 .wpcf7-submit { margin: 0;}
 
-div#outerbeforecontent {
-    margin-top: 189px;
-}
-
 div#logo {
     text-align: center;
     float: none;
@@ -2405,25 +2401,31 @@ border-bottom: none;
 }
 
 .feb-fixed{
-	height: 150px;
-	max-height: 150px;
 	border-bottom: 1px solid black;
 }
 
 .feb-fixed header#top {
-	padding: 0;
+	padding: 23px 0 5px;
 }
 
 .feb-fixed div#logo img {
-	margin-top:5px;
 	max-height: 100%;
 }
 
 .feb-fixed div#logo {
 	max-height: 70px;
-	height: 70px;
 }
 
+@media only screen and (max-width: 1024px) {
+    .feb-header-inner {
+        width: 95%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    div.feb-header-inner {
+        max-width: 400px;
+    }
+}
 @media only screen and (max-width: 480px) {
     .feb-fixed-header-container {
         position: static;
@@ -2431,20 +2433,7 @@ border-bottom: none;
    .feb-header-inner {
         width: 100%;
     }
-div#outerbeforecontent {
-    margin-top: auto;
-}
-}
-@media only screen and (max-width: 767px) {
-    .feb-header-inner {
-        max-width: 400px;
-    }
-    div#outerbeforecontent {
-    margin-top: 280px;
-}
-}
-@media only screen and (max-width: 1024px) {
-    .feb-header-inner {
-        width: 95%;
-    }
+	div#outerbeforecontent {
+	    margin-top: auto;
+	}
 }

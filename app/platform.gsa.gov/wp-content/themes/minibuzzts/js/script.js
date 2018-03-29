@@ -12,14 +12,32 @@ jQuery(document).ready(function($) {
 		else
 			$(this).text('More');
 	});
-
+    function setFEBheader(init){
+      var width = jQuery(document).width();
+      if(width > 480){
+          headerHeight = $("div#headercontainer").height();
+          console.log('headerheight: '+headerHeight);
+          console.log('screenwidth: '+width);
+          if($( "div#outerbeforecontent" ).length > 0)
+            $( "div#outerbeforecontent" ).css({'margin-top' : headerHeight+'px'});
+          else
+            $( "div#maincontent" ).css({'margin-top' : headerHeight+'px'});
+      }else{
+          if($( "div#outerbeforecontent" ).length > 0)
+            $( "div#outerbeforecontent" ).css({'margin-top' : 'auto'});
+          else
+            $( "div#maincontent" ).css({'margin-top' : 'auto'});
+      }
+      if(init && width > 480 && width < 768)
+        $( "div#maincontent" ).css({'margin-top' : headerHeight+21+'px'});
+    }
+    setFEBheader(1);
     //caches a jQuery object containing the header element
     var header = $(".feb-header-inner");
     var headerlogo = $(".feb-header-inner div#logo");
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
-
-        if (scroll >= 200) {
+        if (scroll >= 75) {
             header.addClass("feb-fixed");
             headerlogo.addClass("feb-logo-small");
         } else {
@@ -27,4 +45,9 @@ jQuery(document).ready(function($) {
             headerlogo.removeClass("feb-logo-small");
         }
     });
+
+    $( window ).resize(function() {
+      setFEBheader(0);
+    });
+    
 });
