@@ -48,7 +48,9 @@
                                 'menu_class' => 'sf-menu',
                                 'theme_location' => 'primary'
                             )); ?>
-                            <?php get_search_form(); ?>
+							<div id="feb-header-search">
+								<?php get_search_form(); ?>
+							</div>
                             <div class="clear"></div>
                         </nav><!-- nav -->	
                         
