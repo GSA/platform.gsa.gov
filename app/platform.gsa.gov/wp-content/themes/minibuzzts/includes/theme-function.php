@@ -57,6 +57,7 @@ function minibuzzts_setup() {
 		'height'      => 60,
 		'width'       => 180,
 		'flex-height' => true,
+		'flex-width' => true,
 	) );
 
 	/*
