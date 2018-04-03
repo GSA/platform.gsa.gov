@@ -62,7 +62,8 @@ class WSAL_Loggers_Database extends WSAL_AbstractLogger {
 		$occ->SetMeta( $data );
 
 		// Inject for promoting the paid add-ons.
-		if ( 9999 != $type ) {
+		$type = (int) $type;
+		if ( 9999 !== $type ) {
 			$this->AlertInject( $occ );
 		}
 	}
@@ -127,7 +128,7 @@ class WSAL_Loggers_Database extends WSAL_AbstractLogger {
 	/**
 	 * Inject Promo alert every $count alerts if no Add-ons are activated.
 	 *
-	 * @param object $occurrence - Occurrence, instance of WSAL_Models_Occurrence.
+	 * @param WSAL_Models_Occurrence $occurrence - Occurrence, instance of WSAL_Models_Occurrence.
 	 */
 	private function AlertInject( $occurrence ) {
 		$count = $this->CheckPromoToShow();
@@ -214,7 +215,7 @@ class WSAL_Loggers_Database extends WSAL_AbstractLogger {
 			&& ! class_exists( 'WSAL_Rep_Plugin' )
 			&& ! class_exists( 'WSAL_SearchExtension' )
 			&& ! class_exists( 'WSAL_User_Management_Plugin' ) ) {
-			return 80;
+			return 150;
 		}
 		return null;
 	}
