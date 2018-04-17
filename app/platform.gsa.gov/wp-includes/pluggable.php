@@ -723,13 +723,6 @@ function wp_generate_auth_cookie( $user_id, $expiration, $scheme = 'auth', $toke
 
 	$cookie = $user->user_login . '|' . $expiration . '|' . $token . '|' . $hash;
 
-	//PLATFORM CUSTOM START
-
-	$mcrypt_iv = mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_BLOWFISH, MCRYPT_MODE_CFB));
-	$cookie = base64_encode($mcrypt_iv) . base64_encode(mcrypt_encrypt(MCRYPT_BLOWFISH,COOKIEHASH,$cookie,MCRYPT_MODE_CFB,$mcrypt_iv));
-
-	//PLATFORM CUSTOM END
-
 	/**
 	 * Filters the authentication cookie.
 	 *
@@ -782,12 +775,6 @@ function wp_parse_auth_cookie($cookie = '', $scheme = '') {
 			return false;
 		$cookie = $_COOKIE[$cookie_name];
 	}
-
-	//PLATFORM CUSTOM START
-
-	$cookie = mcrypt_decrypt(MCRYPT_BLOWFISH,COOKIEHASH,base64_decode(substr($cookie,11)),MCRYPT_MODE_CFB,base64_decode(substr($cookie,0,12)));
-
-	//PLATFORM CUSTOM END
 
 	$cookie_elements = explode('|', $cookie);
 	if ( count( $cookie_elements ) !== 4 ) {
