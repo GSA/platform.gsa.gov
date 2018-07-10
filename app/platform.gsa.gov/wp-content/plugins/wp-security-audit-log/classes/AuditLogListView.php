@@ -92,7 +92,6 @@ class WSAL_AuditLogListView extends WP_List_Table {
 		if ( ! in_array( $p, $items ) ) {
 			$items[] = $p;
 		}
-
 		?>
 		<div class="wsal-ipp wsal-ipp-<?php echo esc_attr( $which ); ?>">
 			<?php esc_html_e( 'Show ', 'wp-security-audit-log' ); ?>
@@ -205,7 +204,7 @@ class WSAL_AuditLogListView extends WP_List_Table {
 			$name_column = __( 'Username', 'wp-security-audit-log' );
 		}
 		$cols = array(
-			'type' => __( 'Alert ID', 'wp-security-audit-log' ),
+			'type' => __( 'Event ID', 'wp-security-audit-log' ),
 			'code' => __( 'Severity', 'wp-security-audit-log' ),
 			'crtd' => __( 'Date', 'wp-security-audit-log' ),
 			'user' => $name_column,
@@ -222,7 +221,7 @@ class WSAL_AuditLogListView extends WP_List_Table {
 			foreach ( $sel_columns as $key => $value ) {
 				switch ( $key ) {
 					case 'alert_code':
-						$cols['type'] = __( 'Alert ID', 'wp-security-audit-log' );
+						$cols['type'] = __( 'Event ID', 'wp-security-audit-log' );
 						break;
 					case 'type':
 						$cols['code'] = __( 'Severity', 'wp-security-audit-log' );
@@ -311,7 +310,7 @@ class WSAL_AuditLogListView extends WP_List_Table {
 					return '<span class="log-disable">' . str_pad( $item->alert_id, 4, '0', STR_PAD_LEFT ) . ' </span>';
 				}
 
-				return '<span class="log-disable" data-disable-alert-nonce="' . wp_create_nonce( 'disable-alert-nonce' . $item->alert_id ) . '" data-tooltip="' . __( 'Disable this type of alerts.', 'wp-security-audit-log' ) . '<br>' . $item->alert_id . ' - ' . esc_html( $code->desc ) . $extra_msg . '" data-alert-id="' . $item->alert_id . '" ' . esc_attr( 'data-link=' . $data_link ) . ' >'
+				return '<span class="log-disable" data-disable-alert-nonce="' . wp_create_nonce( 'disable-alert-nonce' . $item->alert_id ) . '" data-tooltip="' . __( 'Disable this type of events.', 'wp-security-audit-log' ) . '<br>' . $item->alert_id . ' - ' . esc_html( $code->desc ) . $extra_msg . '" data-alert-id="' . $item->alert_id . '" ' . esc_attr( 'data-link=' . $data_link ) . ' >'
 					. str_pad( $item->alert_id, 4, '0', STR_PAD_LEFT ) . ' </span>';
 			case 'code':
 				$code = $this->_plugin->alerts->GetAlert( $item->alert_id );
@@ -403,7 +402,7 @@ class WSAL_AuditLogListView extends WP_List_Table {
 				}
 
 				// If there's only one IP...
-				$link = 'http://whatismyipaddress.com/ip/' . $scip . '?utm_source=plugin&utm_medium=referral&utm_campaign=WPSAL';
+				$link = 'https://whatismyipaddress.com/ip/' . $scip . '?utm_source=plugin&utm_medium=referral&utm_campaign=WPSAL';
 				if ( class_exists( 'WSAL_SearchExtension' ) ) {
 					$tooltip = esc_attr__( 'Show me all activity originating from this IP Address', 'wp-security-audit-log' );
 
@@ -420,7 +419,7 @@ class WSAL_AuditLogListView extends WP_List_Table {
 				if ( class_exists( 'WSAL_SearchExtension' ) ) {
 					$tooltip = esc_attr__( 'Show me all activity originating from this IP Address', 'wp-security-audit-log' );
 
-					$html  = "<a class='search-ip' data-tooltip='$tooltip' data-ip='$scip' target='_blank' href='http://whatismyipaddress.com/ip/$scip'>" . esc_html( $scip ) . '</a> <a href="javascript:;" onclick="jQuery(this).hide().next().show();">(more&hellip;)</a><div style="display: none;">';
+					$html  = "<a class='search-ip' data-tooltip='$tooltip' data-ip='$scip' target='_blank' href='https://whatismyipaddress.com/ip/$scip'>" . esc_html( $scip ) . '</a> <a href="javascript:;" onclick="jQuery(this).hide().next().show();">(more&hellip;)</a><div style="display: none;">';
 					foreach ( $oips as $ip ) {
 						if ( $scip != $ip ) {
 							$html .= '<div>' . $ip . '</div>';
@@ -429,7 +428,7 @@ class WSAL_AuditLogListView extends WP_List_Table {
 					$html .= '</div>';
 					return $html;
 				} else {
-					$html  = "<a target='_blank' href='http://whatismyipaddress.com/ip/$scip'>" . esc_html( $scip ) . '</a> <a href="javascript:;" onclick="jQuery(this).hide().next().show();">(more&hellip;)</a><div style="display: none;">';
+					$html  = "<a target='_blank' href='https://whatismyipaddress.com/ip/$scip'>" . esc_html( $scip ) . '</a> <a href="javascript:;" onclick="jQuery(this).hide().next().show();">(more&hellip;)</a><div style="display: none;">';
 					foreach ( $oips as $ip ) {
 						if ( $scip != $ip ) {
 							$html .= '<div>' . $ip . '</div>';
@@ -714,10 +713,12 @@ class WSAL_AuditLogListView extends WP_List_Table {
 
 			// TO DO: Allow order by meta values.
 			if ( 'scip' == $order_by_field ) {
-				$query->addMetaJoin();
+				$query->addMetaJoin(); // Since LEFT JOIN clause causes the result values to duplicate.
+				$query->addCondition( 'meta.name = %s', 'ClientIP' ); // A where condition is added to make sure that we're only requesting the relevant meta data rows from metadata table.
 				$query->addOrderBy( 'CASE WHEN meta.name = "ClientIP" THEN meta.value END', $is_descending );
 			} elseif ( 'user' == $order_by_field ) {
-				$query->addMetaJoin();
+				$query->addMetaJoin(); // Since LEFT JOIN clause causes the result values to duplicate.
+				$query->addCondition( 'meta.name = %s', 'CurrentUserID' ); // A where condition is added to make sure that we're only requesting the relevant meta data rows from metadata table.
 				$query->addOrderBy( 'CASE WHEN meta.name = "CurrentUserID" THEN meta.value END', $is_descending );
 			} else {
 				$tmp = new WSAL_Models_Occurrence();
