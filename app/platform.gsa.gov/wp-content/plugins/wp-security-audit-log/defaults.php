@@ -346,7 +346,7 @@ function wsaldefaults_wsal_init( WpSecurityAuditLog $wsal ) {
 					array( 0003, E_NOTICE, __( 'PHP notice', 'wp-security-audit-log' ), __( '%Message%.', 'wp-security-audit-log' ) ),
 					array( 0004, E_CRITICAL, __( 'PHP exception', 'wp-security-audit-log' ), __( '%Message%.', 'wp-security-audit-log' ) ),
 					array( 0005, E_CRITICAL, __( 'PHP shutdown error', 'wp-security-audit-log' ), __( '%Message%.', 'wp-security-audit-log' ) ),
-					array( 6000, E_NOTICE, __( 'Events automatically pruned by system', 'wp-security-audit-log' ), __( 'System automatically deleted %EventCount% alert(s).', 'wp-security-audit-log' ) ),
+					array( 6000, E_NOTICE, __( 'Events automatically pruned by system', 'wp-security-audit-log' ), __( 'System automatically deleted %EventCount% event(s).', 'wp-security-audit-log' ) ),
 					array( 6001, E_CRITICAL, __( 'Option Anyone Can Register in WordPress settings changed', 'wp-security-audit-log' ), __( '%NewValue% the option "Anyone can register".', 'wp-security-audit-log' ) ),
 					array( 6002, E_CRITICAL, __( 'New User Default Role changed', 'wp-security-audit-log' ), __( 'Changed the New User Default Role from %OldRole% to %NewRole%.', 'wp-security-audit-log' ) ),
 					array( 6003, E_CRITICAL, __( 'WordPress Administrator Notification email changed', 'wp-security-audit-log' ), __( 'Changed the WordPress administrator notifications email address from %OldEmail% to %NewEmail%.', 'wp-security-audit-log' ) ),
@@ -404,6 +404,14 @@ function wsaldefaults_wsal_init( WpSecurityAuditLog $wsal ) {
 					array( 6020, E_CRITICAL, __( 'Changed status of the cron job', 'wp-security-audit-log' ), __( 'The cron job %name% was %status%.', 'wp-security-audit-log' ) ),
 					array( 6021, E_CRITICAL, __( 'Deleted the cron job', 'wp-security-audit-log' ), __( 'The cron job %name% was deleted.', 'wp-security-audit-log' ) ),
 					array( 6022, E_NOTICE, __( 'Started the cron job', 'wp-security-audit-log' ), __( 'The cron job %name% has just started.', 'wp-security-audit-log' ) ),
+				),
+
+				__( 'File Changes', 'wp-security-audit-log' ) => array(
+					array( 6028, E_CRITICAL, __( 'File content has been modified.', 'wp-security-audit-log' ), __( 'The content of the file %FileLocation% has been modified.', 'wp-security-audit-log' ) ),
+					array( 6029, E_CRITICAL, __( 'File added to the site.', 'wp-security-audit-log' ), __( 'The file %FileLocation% has been added to your website.', 'wp-security-audit-log' ) ),
+					array( 6030, E_CRITICAL, __( 'File deleted from the site.', 'wp-security-audit-log' ), __( 'The file %FileLocation% has been deleted from your website.', 'wp-security-audit-log' ) ),
+					array( 6031, E_CRITICAL, __( 'File not scanned because it is bigger than 2MB.', 'wp-security-audit-log' ), __( 'The file %FileLocation% was not scanned because it is bigger than 2MB. Please <a href="https://www.wpsecurityauditlog.com/contact/" target="_blank">contact our support</a> for more information.', 'wp-security-audit-log' ) ),
+					array( 6032, E_CRITICAL, __( 'File integrity scan stopped due to the limit of 1 million files.', 'wp-security-audit-log' ), __( 'The file changes scanning engine has reached the limit of 1 million files and stopped the scan. Please <a href="https://www.wpsecurityauditlog.com/contact/" target="_blank">contact our support</a> for more information.', 'wp-security-audit-log' ) ),
 				),
 			),
 
