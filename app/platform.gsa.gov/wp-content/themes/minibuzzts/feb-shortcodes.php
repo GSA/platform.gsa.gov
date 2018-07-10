@@ -130,7 +130,7 @@ function feb_landing_page($atts, $content = null)
 		'page' => ''
     ), $atts));
 	?>
-<div class="col-md-8 column">
+<div class="column">
 <?php
 $landingHeader = '';
 $landingSecond = '';
@@ -162,13 +162,6 @@ $itemCounter = 1;
 		        $replace_count = 0;
 			?>
 	<div class="media">
-		<?php
-	        if ( has_post_thumbnail() ) {
-	            echo '<a href="'.get_permalink().'" class="media-left"><img src='.wp_get_attachment_url( get_post_thumbnail_id(get_the_ID())).' class="img-circle media-object"></a>';
-	        } else {
-	            echo '<div class="media-left"><img src="'.PARENT_URL.'/images/febdefaultimg.png" class="media-object"></div>';
-	        }
-	    ?>
 	<div class="media-body">
 	<h4 class="media-heading">
 		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
