@@ -21,9 +21,6 @@
                                 <?php esc_html_e( 'Copyright', 'minibuzzts'); echo ' &copy; ';
                                 echo date_i18n(esc_html__('Y','minibuzzts')) . ' <a href="'.esc_url( home_url( '/' ) ).'">'.get_bloginfo('name') .'</a>.';
                                 ?>
-                                <?php esc_html_e( ' Design by', 'minibuzzts'); ?>	
-                                <a href="<?php echo esc_url(  esc_html__( 'http://www.templatesquare.com', 'minibuzzts' ) ); ?>" title="">
-								<?php esc_html_e( 'TemplateSquare.Com','minibuzzts')?></a>.
                             </div>
                         </div>
                         <div class="clear"></div>
