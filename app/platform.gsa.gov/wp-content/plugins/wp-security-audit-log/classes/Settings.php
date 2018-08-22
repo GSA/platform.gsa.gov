@@ -111,12 +111,43 @@ class WSAL_Settings {
 	protected $_excluded_ip = array();
 
 	/**
+	 * URLs excluded from monitoring.
+	 *
+	 * @var array
+	 * @since 3.2.2
+	 */
+	protected $excluded_urls = array();
+
+	/**
+	 * Alerts enabled in Geek mode.
+	 *
+	 * @var array
+	 */
+	public $geek_alerts = array( 1004, 1005, 1006, 1007, 2023, 2024, 2053, 2054, 2055, 2062, 2100, 2106, 2111, 2112, 2124, 2125, 2094, 2095, 2043, 2071, 2082, 2083, 2085, 2089, 4014, 4015, 4016, 5010, 5011, 5012, 5019, 5025, 5013, 5014, 5015, 5016, 5017, 5018, 6001, 6002, 6007, 6008, 6010, 6011, 6012, 6013, 6014, 6015, 6016, 6017, 6018, 6023, 6024, 6025 );
+
+	/**
 	 * Method: Constructor.
 	 *
 	 * @param WpSecurityAuditLog $plugin - Instance of WpSecurityAuditLog.
 	 */
 	public function __construct( WpSecurityAuditLog $plugin ) {
 		$this->_plugin = $plugin;
+	}
+
+	/**
+	 * Enable Basic Mode.
+	 */
+	public function set_basic_mode() {
+		// Disable alerts of geek mode.
+		$this->SetDisabledAlerts( $this->geek_alerts );
+	}
+
+	/**
+	 * Enable Geek Mode.
+	 */
+	public function set_geek_mode() {
+		// Disable alerts of geek mode.
+		$this->SetDisabledAlerts( array() );
 	}
 
 	/**
@@ -282,7 +313,7 @@ class WSAL_Settings {
 	 * @return string
 	 */
 	public function GetDefaultPruningDate() {
-		return '12 months';
+		return '6 months';
 	}
 
 	/**
@@ -310,6 +341,24 @@ class WSAL_Settings {
 			$this->_plugin->SetGlobalOption( 'pruning-date', $newvalue );
 			$this->_pruning = $newvalue;
 		}
+	}
+
+	/**
+	 * Return current pruning unit.
+	 *
+	 * @return string
+	 */
+	public function get_pruning_unit() {
+		return $this->_plugin->GetGlobalOption( 'pruning-unit', 'months' );
+	}
+
+	/**
+	 * Set current pruning unit.
+	 *
+	 * @param string $newvalue – New value of pruning unit.
+	 */
+	public function set_pruning_unit( $newvalue ) {
+		$this->_plugin->SetGlobalOption( 'pruning-unit', $newvalue );
 	}
 
 	/**
@@ -452,11 +501,19 @@ class WSAL_Settings {
 		return $this->_plugin->SetGlobalOption( 'delete-data', $enabled );
 	}
 
+	/**
+	 * Set Plugin Viewers.
+	 *
+	 * @param array $users_or_roles – Users/Roles.
+	 */
 	public function SetAllowedPluginViewers( $users_or_roles ) {
 		$this->_viewers = $users_or_roles;
 		$this->_plugin->SetGlobalOption( 'plugin-viewers', implode( ',', $this->_viewers ) );
 	}
 
+	/**
+	 * Get Plugin Viewers.
+	 */
 	public function GetAllowedPluginViewers() {
 		if ( is_null( $this->_viewers ) ) {
 			$this->_viewers = array_unique( array_filter( explode( ',', $this->_plugin->GetGlobalOption( 'plugin-viewers' ) ) ) );
@@ -464,16 +521,47 @@ class WSAL_Settings {
 		return $this->_viewers;
 	}
 
+	/**
+	 * Set Plugin Editors.
+	 *
+	 * @param array $users_or_roles – Users/Roles.
+	 */
 	public function SetAllowedPluginEditors( $users_or_roles ) {
 		$this->_editors = $users_or_roles;
 		$this->_plugin->SetGlobalOption( 'plugin-editors', implode( ',', $this->_editors ) );
 	}
 
+	/**
+	 * Get Plugin Editors.
+	 */
 	public function GetAllowedPluginEditors() {
 		if ( is_null( $this->_editors ) ) {
 			$this->_editors = array_unique( array_filter( explode( ',', $this->_plugin->GetGlobalOption( 'plugin-editors' ) ) ) );
 		}
 		return $this->_editors;
+	}
+
+	/**
+	 * Set restrict plugin setting.
+	 *
+	 * @param string $setting – Setting.
+	 * @since 3.2.3
+	 */
+	public function set_restrict_plugin_setting( $setting ) {
+		$this->_plugin->SetGlobalOption( 'restrict-plugin-settings', $setting );
+	}
+
+	/**
+	 * Get restrict plugin setting.
+	 *
+	 * @since 3.2.3
+	 */
+	public function get_restrict_plugin_setting() {
+		$default_value = 'only_admins';
+		if ( $this->IsRestrictAdmins() ) {
+			$default_value = 'only_me';
+		}
+		return $this->_plugin->GetGlobalOption( 'restrict-plugin-settings', $default_value );
 	}
 
 	public function SetViewPerPage( $newvalue ) {
@@ -541,6 +629,7 @@ class WSAL_Settings {
 	 * Returns access tokens for a particular action.
 	 *
 	 * @param string $action - Type of action.
+	 * @throws Exception - Unknown action exception.
 	 * @return string[] List of tokens (usernames, roles etc).
 	 */
 	public function GetAccessTokens( $action ) {
@@ -793,13 +882,43 @@ class WSAL_Settings {
 	}
 
 	/**
-	 * Roles excluded from monitoring.
+	 * Set URLs excluded from monitoring.
+	 *
+	 * @param array $urls - Array of URLs.
+	 * @since 3.2.2
+	 */
+	public function set_excluded_urls( $urls ) {
+		$urls = array_map( 'untrailingslashit', $urls );
+		$urls = array_unique( $urls );
+		$this->excluded_urls = $urls;
+		$this->_plugin->SetGlobalOption( 'excluded-urls', esc_html( implode( ',', $this->excluded_urls ) ) );
+	}
+
+	/**
+	 * Get URLs excluded from monitoring.
+	 *
+	 * @since 3.2.2
+	 */
+	public function get_excluded_urls() {
+		if ( empty( $this->excluded_urls ) ) {
+			$this->excluded_urls = array_unique( array_filter( explode( ',', $this->_plugin->GetGlobalOption( 'excluded-urls' ) ) ) );
+		}
+		return $this->excluded_urls;
+	}
+
+	/**
+	 * Set roles excluded from monitoring.
+	 *
+	 * @param array $roles - Array of roles.
 	 */
 	public function SetExcludedMonitoringRoles( $roles ) {
 		$this->_excluded_roles = $roles;
 		$this->_plugin->SetGlobalOption( 'excluded-roles', esc_html( implode( ',', $this->_excluded_roles ) ) );
 	}
 
+	/**
+	 * Get roles excluded from monitoring.
+	 */
 	public function GetExcludedMonitoringRoles() {
 		if ( empty( $this->_excluded_roles ) ) {
 			$this->_excluded_roles = array_unique( array_filter( explode( ',', $this->_plugin->GetGlobalOption( 'excluded-roles' ) ) ) );
@@ -862,9 +981,9 @@ class WSAL_Settings {
 	 */
 	public function GetDateFormat() {
 		$wp_date_format = get_option( 'date_format' );
-		$search = array( 'F', 'M', 'n', 'j', ' ', '/', 'y', 'S', ',', 'l', 'D' );
-		$replace = array( 'm', 'm', 'm', 'd', '-', '-', 'Y', '', '', '', '' );
-		$date_format = str_replace( $search, $replace, $wp_date_format );
+		$search         = array( 'F', 'M', 'n', 'j', ' ', '/', 'y', 'S', ',', 'l', 'D' );
+		$replace        = array( 'm', 'm', 'm', 'd', '-', '-', 'Y', '', '', '', '' );
+		$date_format    = str_replace( $search, $replace, $wp_date_format );
 		return $date_format;
 	}
 
@@ -885,7 +1004,7 @@ class WSAL_Settings {
 	 * Server's timezone or WordPress' timezone.
 	 */
 	public function GetTimezone() {
-		return $this->_plugin->GetGlobalOption( 'timezone', 0 );
+		return $this->_plugin->GetGlobalOption( 'timezone', 'wp' );
 	}
 
 	public function SetTimezone( $newvalue ) {
@@ -920,11 +1039,11 @@ class WSAL_Settings {
 	public function GetColumns() {
 		$columns = array(
 			'alert_code' => '1',
-			'type' => '1',
-			'date' => '1',
-			'username' => '1',
-			'source_ip' => '1',
-			'message' => '1',
+			'type'       => '1',
+			'date'       => '1',
+			'username'   => '1',
+			'source_ip'  => '1',
+			'message'    => '1',
 		);
 		if ( $this->_plugin->IsMultisite() ) {
 			$columns = array_slice( $columns, 0, 5, true ) + array(
@@ -935,11 +1054,11 @@ class WSAL_Settings {
 		if ( ! empty( $selected ) ) {
 			$columns = array(
 				'alert_code' => '0',
-				'type' => '0',
-				'date' => '0',
-				'username' => '0',
-				'source_ip' => '0',
-				'message' => '0',
+				'type'       => '0',
+				'date'       => '0',
+				'username'   => '0',
+				'source_ip'  => '0',
+				'message'    => '0',
 			);
 			if ( $this->_plugin->IsMultisite() ) {
 				$columns = array_slice( $columns, 0, 5, true ) + array(
@@ -968,6 +1087,24 @@ class WSAL_Settings {
 
 	public function SetWPBackend( $enabled ) {
 		return $this->_plugin->SetGlobalOption( 'wp-backend', $enabled );
+	}
+
+	/**
+	 * Set use email setting.
+	 *
+	 * @param string $use – Setting value.
+	 */
+	public function set_use_email( $use ) {
+		return $this->_plugin->SetGlobalOption( 'use-email', $use );
+	}
+
+	/**
+	 * Get use email setting.
+	 *
+	 * @return string
+	 */
+	public function get_use_email() {
+		return $this->_plugin->GetGlobalOption( 'use-email', 'default_email' );
 	}
 
 	public function SetFromEmail( $email_address ) {
@@ -1079,7 +1216,7 @@ class WSAL_Settings {
 			$archive_ssl_ca     = $this->_plugin->GetGlobalOption( 'archive-ssl-ca', false );
 			$archive_ssl_cert   = $this->_plugin->GetGlobalOption( 'archive-ssl-cert', false );
 			$archive_ssl_key    = $this->_plugin->GetGlobalOption( 'archive-ssl-key', false );
-			$config = WSAL_Connector_ConnectorFactory::GetConfigArray( $archive_type, $archive_user, $password, $archive_name, $archive_hostname, $archive_baseprefix, $archive_ssl, $archive_cc, $archive_ssl_ca, $archive_ssl_cert, $archive_ssl_key );
+			$config             = WSAL_Connector_ConnectorFactory::GetConfigArray( $archive_type, $archive_user, $password, $archive_name, $archive_hostname, $archive_baseprefix, $archive_ssl, $archive_cc, $archive_ssl_ca, $archive_ssl_cert, $archive_ssl_key );
 			$this->_plugin->getConnector( $config )->getAdapter( 'Occurrence' );
 		}
 	}
@@ -1167,5 +1304,55 @@ class WSAL_Settings {
 			$result = @file_put_contents( $dir_path . '.htaccess', 'Deny from all' );
 		}
 		return ($result > 0);
+	}
+
+	/**
+	 * Method: Get Token Type.
+	 *
+	 * @param string $token - Token type.
+	 * @since 3.2.3
+	 */
+	public function get_token_type( $token ) {
+		// Get users.
+		$users = array();
+		foreach ( get_users( 'blog_id=0&fields[]=user_login' ) as $obj ) {
+			$users[] = $obj->user_login;
+		}
+
+		// Get user roles.
+		$roles = array_keys( get_editable_roles() );
+
+		// Get custom post types.
+		$post_types = get_post_types( array(), 'names', 'and' );
+
+		// Check if the token matched users.
+		if ( in_array( $token, $users ) ) {
+			return 'user';
+		}
+
+		// Check if the token matched user roles.
+		if ( in_array( $token, $roles ) ) {
+			return 'role';
+		}
+
+		// Check if the token matched post types.
+		if ( in_array( $token, $post_types ) ) {
+			return 'cpts';
+		}
+
+		// Check if the token matches a URL.
+		if ( ( false !== strpos( $token, home_url() ) ) && filter_var( $token, FILTER_VALIDATE_URL ) ) {
+			return 'urls';
+		}
+
+		// Check if the token matches an IP address.
+		if (
+			filter_var( $token, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 ) // Validate IPv4.
+			|| filter_var( $token, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6 ) // Validate IPv6.
+		) {
+			return 'ip';
+		}
+
+		return 'other';
 	}
 }

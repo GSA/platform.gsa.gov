@@ -1,5 +1,4 @@
 #audit-log-settings {
-	padding-right: 256px;
 	position: relative;
 }
 
@@ -16,9 +15,14 @@
 	margin: 4px 0;
 }
 
+.wsal-tab__heading {
+	margin-bottom: 0;
+}
 .sectoken-user,
 .sectoken-role,
 .sectoken-cpts,
+.sectoken-urls,
+.sectoken-ip,
 .sectoken-other {
 	display: inline-block;
 	border-width: 1px;
@@ -36,6 +40,8 @@
 .sectoken-user a,
 .sectoken-role a,
 .sectoken-cpts a,
+.sectoken-urls a,
+.sectoken-ip a,
 .sectoken-other a {
 	text-decoration: none;
 	font-size: 12px;
@@ -55,6 +61,8 @@
 .sectoken-user a:hover,
 .sectoken-role a:hover,
 .sectoken-cpts a:hover,
+.sectoken-urls a:hover,
+.sectoken-ip a:hover,
 .sectoken-other a:hover {
 	background: #FB9;
 }
@@ -62,14 +70,19 @@
 .sectoken-user { background: #EFF; border-color: #5BE; }
 .sectoken-role { background: #EFE; border-color: #5B5; }
 .sectoken-cpts { background: #EFF; border-color: #5BE; }
+.sectoken-urls { background: #EFF; border-color: #5BE; }
+.sectoken-ip { background: #FFE; border-color: #ED5; }
 .sectoken-other { background: #FFE; border-color: #ED5; }
 .sectoken-del { background: #FEE; border-color: #EBB; }
 
+#wsal-tabs {
+	margin: 0 0 1.5em;
+}
 .wsal-tab {
 	margin-top: 0px;
 }
 .wsal-tab th {
-	padding-left: 20px;
+	/* padding-left: 20px; */
 }
 .wsal-tab td {
 	padding-left: 20px;
@@ -83,6 +96,18 @@
 }
 .wsal-tab .error.hide {
 	display: none;
+}
+.wsal-tab input[type=text],
+.wsal-tab input[type=email] {
+	display: inline-block;
+	width: 350px;
+	padding: 5px;
+	margin: 0;
+}
+.wsal-tab input[type=button],
+.wsal-tab button {
+	display: inline-block;
+	vertical-align: top;
 }
 
 /*
@@ -179,17 +204,20 @@ a.disabled {
 }
 
 #wsal_files,
-#wsal_files_types {
+#wsal_files_types,
+#wsal_dirs {
+	background: #fff;
 	width: 250px;
 	height: 230px;
 	overflow-y: scroll;
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 	padding: 10px 5px;
 	margin-right: 10px;
 }
 
 #wsal_files label,
-#wsal_files_types label {
+#wsal_files_types label,
+#wsal_dirs label {
 	display: block;
 	margin-bottom: 2px;
 	padding: 3px 5px;
@@ -197,23 +225,27 @@ a.disabled {
 }
 
 #wsal_files input[type='checkbox'],
-#wsal_files_types input[type='checkbox'] {
+#wsal_files_types input[type='checkbox'],
+#wsal_dirs input[type='checkbox'] {
 	display: none;
 }
 
 #wsal_files input[type='checkbox']:checked + label,
-#wsal_files_types input[type='checkbox']:checked + label {
+#wsal_files_types input[type='checkbox']:checked + label,
+#wsal_dirs input[type='checkbox']:checked + label {
 	background: #f1f1f1;
 }
 
 #wsal_files label:hover,
-#wsal_files_types label:hover {
+#wsal_files_types label:hover,
+#wsal_dirs label:hover {
 	background: #f1f1f1;
 	transition: all 0.2s linear;
 }
 
 #wsal_add_file_name,
-#wsal_add_file_type_name {
+#wsal_add_file_type_name,
+#wsal_add_dir_name {
 	display: inline-block;
 	width: 261px;
 	height: 28px;

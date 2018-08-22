@@ -5,15 +5,15 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: wordpress security plugin, wordpress security audit log, audit log, event log wordpress, wordpress user tracking, wordpress activity log, wordpress audit, security event log, audit trail, wordpress security monitor, wordpress admin, wordpress admin monitoring, user activity, admin, multisite, dashboard, notification, wordpress monitoring, email notification, wordpress email alerts, tracking, user tracking, user activity report, wordpress audit trail
 Requires at least: 3.6
-Tested up to: 4.9.6
-Stable tag: 3.2.1
+Tested up to: 4.9.7
+Stable tag: 3.2.3.2
 Requires PHP: 5.4.43
 
-An easy to use and comprehensive monitoring & activity log solution that keeps a log of all changes & user activity on your WordPress site.
+An easy to use & comprehensive WordPress activity log plugin to log all changes on WordPress sites & multisite networks.
 
 == Description ==
 
-<strong>THE MOST COMPREHENSIVE, EASY TO USE & REAL TIME WORDPRESS AUDIT TRAIL PLUGIN</strong><br />
+<strong>THE MOST COMPREHENSIVE & EASY TO USE WORDPRESS ACTIVITY LOG PLUGIN</strong><br />
 
 Keep an audit log of everything that happens on your WordPress and [WordPress multisite](http://www.wpsecurityauditlog.com/documentation/wordpress-multisite-plugin-features-support/) with the WP Security Audit Log plugin to ensure user productivity, easily spot suspicious behavior before it becomes a WordPress security problem and have an organized website.
 
@@ -114,12 +114,12 @@ WP Security Audit Log plugin also has a number of features that make WordPress a
 * [Techwibe](https://www.techwibe.com/wp-security-audit-log-wordpress-plugin/)
 * [KevinMuldoon.com](https://www.kevinmuldoon.com/wp-security-audit-log-review/)
 * [Cloudways](https://www.cloudways.com/blog/monitor-wordpress-with-wp-security-audit-log-plugin/)
-* [ManageWP Plugins of the month](https://managewp.com/free-wordpress-plugins-june-2014)
+* [Collective Ray](https://www.collectiveray.com/wp/plugins/wordpress-security-audit-log)
 * [MyWPExpert](http://www.mywpexpert.com/wp-security-audit-log/)
 * [BlogVault](https://blogvault.net/wp-security-audit-log-plugin-review/)
 * [Firewall.cx](http://www.firewall.cx/general-topics-reviews/security-articles/1146-wordpress-audit-monitor-log-site-security-alerts.html)
 * [Design Wall](http://www.designwall.com/blog/10-wordpress-multisite-plugins-you-shouldnt-live-without/)
-* [Tourqe News](http://torquemag.io/5-awesome-wordpress-plugins-you-may-not-have-heard-of/)
+* [Tidy Repo](https://tidyrepo.com/wp-security-audit-log-wordpress-activity-log/)
 * [Shout Me Loud](http://www.shoutmeloud.com/how-to-monitor-user-activities-wordpress-dashboard.html)
 * [Monster Post](http://blog.templatemonster.com/2015/12/15/wp-security-audit-log-plugin-review/)
 * [The Darknet](http://www.darknet.org.uk/2015/10/wp-security-audit-log-a-complete-audit-log-plugin-for-wordpress/)
@@ -179,38 +179,39 @@ Please refer to our [Support & Documentation pages](https://www.wpsecurityauditl
 
 == Changelog ==
 
-= 3.2.1(2018-06-05) =
+= 3.2.3.2 (2018-08-17) =
 
-* **Improvements**
-	* Improved connectivity checks of archiving and mirroring external databases.
-	* Updated external database connection SSL code to support PHP 5.4.
-	* Renamed Alerts to Events - [More information on WordPress activity log events](https://www.wpsecurityauditlog.com/support-documentation/what-are-alerts-and-alert-ids-in-the-wordpress-activity-log/)
+* **Bug fix**
+	* Fixed a backward compatibility issue in which the setup wizard was wrongly restricting plugin access.
 
-= 3.2.0(2018-06-05) =
+= 3.2.3.1 (2018-08-15) =
 
-Release notes: [WordPress file changes warnings & more in WP Security Audit Log 3.2](https://www.wpsecurityauditlog.com/releases/3-2-website-file-changes-logs/)
+* **Bug fix**
+	* Fixed a compatibility problem with Windows server.
+	
+= 3.2.3 (2018-08-13) =
+
+Release Notes: [click here](https://www.wpsecurityauditlog.com/releases/3-2-3-setup-wizard-ease-of-use/)
 
 * **New Features**
-	* [File Integrity scans & WordPress file changes warnings in the activity log](https://www.wpsecurityauditlog.com/support-documentation/wordpress-files-changes-warning-activity-logs/).
-	* Support for SSL / Client certificates for [activity log external database connections](https://www.wpsecurityauditlog.com/premium-features/database-integration-tools-wordpress-activity-log/) (including archiving and mirroring).
-	
-* **New Activity Log Event IDs**
-	* 6028 - A file on the website has been modified
-	* 6029 - New file has been created on the website
-	* 6030 - A file was deleted from your website
+	* Added a startup wizard to assist new users with new installs.
+	* Introduced the [WordPress activity log levels](https://www.wpsecurityauditlog.com/support-documentation/default-wordpress-activity-log-levels/). 
+	* New search filters in the WordPress activity log viewer.
+	* Added a new test button to all external database connections, including those for [WordPress activity log archiving](https://www.wpsecurityauditlog.com/support-documentation/archive-alerts-wordpress-audit-trail/) and mirroring.
+	* Added several new settings to [purge the WordPress activity log](https://www.wpsecurityauditlog.com/support-documentation/wordpress-activity-log-deleted-plugin-uninstall-option/) and reset plugin settings to default.
 	
 * **Improvements**
-	* Performance enhancement - storing table names in sentients so they are note retrieved every time they are required.
-	* Improved the built-in WordPress email notifications for content.
-	* Changed the Freemius opt-in / opt-out screen to non compulsory.
-	* Updated WhatIsMyIpAddress.com link to HTTPS so traffic is now encrypted.
-	* Added notification on new installs to point out to users where to find the [WordPress activity logs](https://www.wpsecurityauditlog.com/support-documentation/what-wordpress-audit-trail/).
-	* Updated Freemius SDK (now GDPR compliant)
+	* Performance improvement: optimized the logic of the plugin sensors to load only required ones during user action.
+	* Redesigned all the settings pages and included more help text, making them more user friendly.
+	* Added links to [plugin knowledge base](https://www.wpsecurityauditlog.com/support-documentation/) where possible in the plugin settings.
+	* Improved the [WordPress activity log pruning setting](https://www.wpsecurityauditlog.com/support-documentation/can-prune-alerts-audit-trail/) so now it is possible to configure retention based on a period of time.
+	* Database improvement: changed the option_value column in the plugin tables to long text.
+	* [WordPress website file changes](https://www.wpsecurityauditlog.com/support-documentation/wordpress-files-changes-warning-activity-logs/) results are now stored in the plugin's options table.
+	* Improved the list of excluded file extensions in the WordPress file changes scanner.
+	* Added sorting in the [logged in WordPress users](https://www.wpsecurityauditlog.com/support-documentation/getting-started-wordpress-users-sessions-management/#who-logged-in-wordpress) view.
+	* Added more checks to ensure opt-in and other plugin messages are shown when needed only.
+	* Removed affiliate network message in plugin.
 
 * **Bug Fixes**
-	* Fixed issue in which the archive / live activity log database was not being saved properly.
-	* Fixed issue in WooCommerce activity log - Alert 2053 was being reported instead of 9001 when a new product is published.
-	* Fixed issue in WooCommerce product SEO change - wrong event was being reported. 
-	* Fixed issue where sorting activity logs events by IP address which tripled the entries displayed in the log.
-		
-Refer to the [WP Security Audit Log change log](https://www.wpsecurityauditlog.com/plugin-change-log/) page for the complete change log.
+	* Fixed an issue where stored passwords might have been changed because of change from Mcrypt to OpenSSL.
+	* Fixed an issue in which retention settings were reset when moved to archiving settings.
