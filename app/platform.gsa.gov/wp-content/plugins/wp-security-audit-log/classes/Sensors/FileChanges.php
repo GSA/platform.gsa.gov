@@ -71,7 +71,7 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 	 *
 	 * @var string
 	 */
-	private static $schedule_hook = 'wsal_detect_file_changes';
+	public static $schedule_hook = 'wsal_detect_file_changes';
 
 	/**
 	 * Scan files counter during a scan.
@@ -90,9 +90,9 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 	/**
 	 * Class constants.
 	 */
-	const SCAN_DAILY = 'daily';
-	const SCAN_WEEKLY = 'weekly';
-	const SCAN_MONTHLY = 'monthly';
+	const SCAN_DAILY      = 'daily';
+	const SCAN_WEEKLY     = 'weekly';
+	const SCAN_MONTHLY    = 'monthly';
 	const SCAN_FILE_LIMIT = 1000000;
 
 	/**
@@ -118,6 +118,11 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 	 * Listening to events using WP hooks.
 	 */
 	public function HookEvents() {
+		// Disable the sensor if file changes is disabled.
+		if ( isset( $this->scan_settings['scan_file_changes'] ) && 'enable' !== $this->scan_settings['scan_file_changes'] ) {
+			return;
+		}
+
 		// Filter stored and scanned files to balance scan file exclusion.
 		add_filter( 'wsal_file_scan_stored_files', array( $this, 'filter_scan_files' ), 10, 2 );
 		add_filter( 'wsal_file_scan_scanned_files', array( $this, 'filter_scan_files' ), 10, 2 );
@@ -155,7 +160,8 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 			'scan_day'            => $this->plugin->GetGlobalOption( 'scan-day', '1' ),
 			'scan_date'           => $this->plugin->GetGlobalOption( 'scan-date', '10' ),
 			'scan_directories'    => $this->plugin->GetGlobalOption( 'scan-directories', $default_scan_dirs ),
-			'excluded_extensions' => $this->plugin->GetGlobalOption( 'scan-excluded-extensions', array( 'jpg', 'jpeg', 'png', 'bmp', 'pdf', 'txt', 'log', 'mo', 'po', 'mp3', 'wav' ) ),
+			'excluded_dirs'       => $this->plugin->GetGlobalOption( 'scan-excluded-directories', array() ),
+			'excluded_extensions' => $this->plugin->GetGlobalOption( 'scan-excluded-extensions', array( 'jpg', 'jpeg', 'png', 'bmp', 'pdf', 'txt', 'log', 'mo', 'po', 'mp3', 'wav', 'gif', 'ico', 'jpe', 'psd', 'raw', 'svg', 'tif', 'tiff', 'aif', 'flac', 'm4a', 'oga', 'ogg', 'ra', 'wma', 'asf', 'avi', 'mkv', 'mov', 'mp4', 'mpe', 'mpeg', 'mpg', 'ogv', 'qt', 'rm', 'vob', 'webm', 'wm', 'wmv' ) ),
 			'excluded_files'      => $this->plugin->GetGlobalOption( 'scan_excluded_files', array() ),
 			'last_scanned'        => $this->plugin->GetGlobalOption( 'last-scanned', false ),
 		);
@@ -163,8 +169,8 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 		// Set the scan hours.
 		if ( ! empty( $this->scan_settings['scan_hour'] ) ) {
 			$saved_hour = (int) $this->scan_settings['scan_hour'];
-			$next_hour = $saved_hour + 1;
-			$hours = array( $saved_hour, $next_hour );
+			$next_hour  = $saved_hour + 1;
+			$hours      = array( $saved_hour, $next_hour );
 			foreach ( $hours as $hour ) {
 				$daily_hour[] = str_pad( $hour, 2, '0', STR_PAD_LEFT );
 			}
@@ -252,7 +258,7 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 		}
 
 		// Set the options name for file list.
-		$file_list = "wsal_local_files_$next_to_scan";
+		$file_list = "local_files_$next_to_scan";
 
 		// Prepare directories array.
 		// @todo Store this in transient to cache the value. We don't need to load it every time.
@@ -271,7 +277,7 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 
 		// Prepare directories path.
 		foreach ( $server_dirs as $index => $server_dir ) {
-			$server_dir = untrailingslashit( $server_dir );
+			$server_dir            = untrailingslashit( $server_dir );
 			$server_dirs[ $index ] = preg_replace( '/^' . preg_quote( ABSPATH, '/' ) . '/', '', $server_dir );
 		}
 
@@ -285,7 +291,7 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 			$this->excludes = $server_dirs;
 
 			// Get list of files to scan from DB.
-			$stored_files = get_site_option( $file_list, array() );
+			$stored_files = $this->plugin->GetGlobalOption( $file_list, array() );
 
 			/**
 			 * `Filter`: Stored files filter.
@@ -335,10 +341,10 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 			do_action( 'wsal_after_file_scan', $path_to_scan );
 
 			// Get initial scan setting.
-			$initial_scan = get_site_option( "wsal_is_initial_scan_$next_to_scan", true );
+			$initial_scan = $this->plugin->GetGlobalOption( "is_initial_scan_$next_to_scan", 'yes' );
 
 			// If the scan is not initial then.
-			if ( ! $initial_scan ) {
+			if ( 'yes' !== $initial_scan ) {
 				// Compare the results to find out about file added and removed.
 				$files_added   = array_diff_key( $filtered_scanned_files, $filtered_stored_files );
 				$files_removed = array_diff_key( $filtered_stored_files, $filtered_scanned_files );
@@ -378,6 +384,17 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 
 					// Log the alert.
 					foreach ( $files_added as $file => $file_hash ) {
+						// Get directory name.
+						$directory_name = dirname( $file );
+
+						// Check if the directory is in excluded directories list.
+						if (
+							! empty( $site_content->skip_directories )
+							&& in_array( $directory_name, $site_content->skip_directories, true )
+						) {
+							continue; // If true, then skip the loop.
+						}
+
 						// Get filename from file path.
 						$filename = basename( $file );
 
@@ -410,6 +427,14 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 				if ( count( $files_removed ) > 0 ) {
 					// Log the alert.
 					foreach ( $files_removed as $file => $file_hash ) {
+						// Get directory name.
+						$directory_name = dirname( $file );
+
+						// Check if directory is in excluded directories list.
+						if ( in_array( $directory_name, $this->scan_settings['excluded_dirs'], true ) ) {
+							continue; // If true, then skip the loop.
+						}
+
 						// Get filename from file path.
 						$filename = basename( $file );
 
@@ -458,11 +483,11 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 				 */
 				do_action( 'wsal_last_scanned_directory', $next_to_scan );
 			} else {
-				update_site_option( "wsal_is_initial_scan_$next_to_scan", 0 ); // Initial scan check set to false.
+				$this->plugin->SetGlobalOption( "is_initial_scan_$next_to_scan", 'no' ); // Initial scan check set to false.
 			}
 
 			// Store scanned files list.
-			update_site_option( $file_list, $scanned_files );
+			$this->plugin->SetGlobalOption( $file_list, $scanned_files );
 
 			if ( ! $manual ) {
 				$this->plugin->SetGlobalOption( 'scanned_dirs', $scanned_dirs );
@@ -502,7 +527,7 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 
 		// Set the directory path.
 		$dir_path = $this->root_path . $path;
-		$files = array(); // Array of files to return.
+		$files    = array(); // Array of files to return.
 
 		// Open directory.
 		$dir_handle = @opendir( $dir_path );
@@ -512,7 +537,7 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 
 		// Multsite checks.
 		$is_multisite = is_multisite();
-		$directories = $this->scan_settings['scan_directories']; // Get directories to be scanned.
+		$directories  = $this->scan_settings['scan_directories']; // Get directories to be scanned.
 
 		// Scan the directory for files.
 		while ( false !== ( $item = @readdir( $dir_handle ) ) ) {
@@ -565,6 +590,11 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 					continue;
 				}
 
+				// Check if the directory is in excluded directories list.
+				if ( in_array( $absolute_name, $this->scan_settings['excluded_dirs'], true ) ) {
+					continue; // Skip the directory.
+				}
+
 				// If not multisite then simply scan.
 				if ( ! $is_multisite ) {
 					$files = array_merge( $files, $this->scan_path( $relative_name ) );
@@ -615,8 +645,8 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 					break; // And break the loop.
 				}
 
-				// 2MB = 2097152 bytes.
-				if ( filesize( $absolute_name ) < 2097152 ) { // Check if file size is less than 2MB.
+				// 5MB = 5242880 bytes.
+				if ( filesize( $absolute_name ) < 5242880 ) { // Check if file size is less than 5MB.
 					$this->scan_file_count = $this->scan_file_count + 1;
 					// File data.
 					$files[ $absolute_name ] = @md5_file( $absolute_name ); // File hash.
@@ -810,8 +840,8 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 	 * Scan start checks:
 	 *   1. Check frequency is not empty.
 	 *   2. Check if there is any directory left to scan.
-	 *   2a. If there is a directory left, then proceed to check frequency.
-	 *   2b. Else check if 24 hrs limit is passed or not.
+	 *     2a. If there is a directory left, then proceed to check frequency.
+	 *     2b. Else check if 24 hrs limit is passed or not.
 	 *   3. Check frequency of the scan set by user and decide to start the scan or not.
 	 *
 	 * @param string $frequency - Frequency of the scan.
@@ -862,7 +892,7 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 				break;
 			case self::SCAN_WEEKLY: // Weekly scan.
 				$weekly_day = $this->calculate_weekly_day();
-				$scan = ( self::$weekly_day === $weekly_day ) ? true : false;
+				$scan       = ( self::$weekly_day === $weekly_day ) ? true : false;
 				break;
 			case self::SCAN_MONTHLY: // Monthly scan.
 				$str_date = $this->calculate_monthly_day();
@@ -997,9 +1027,10 @@ class WSAL_Sensors_FileChanges extends WSAL_AbstractSensor {
 
 			// Check if the option is instance of stdClass.
 			if ( false !== $site_content && $site_content instanceof stdClass ) {
-				$site_content->skip_core = false; // Reset skip core after the scan is complete.
-				$site_content->skip_files = array(); // Empty the skip files at the end of the scan.
-				$site_content->skip_extensions = array(); // Empty the skip extensions at the end of the scan.
+				$site_content->skip_core        = false;   // Reset skip core after the scan is complete.
+				$site_content->skip_files       = array(); // Empty the skip files at the end of the scan.
+				$site_content->skip_extensions  = array(); // Empty the skip extensions at the end of the scan.
+				$site_content->skip_directories = array(); // Empty the skip directories at the end of the scan.
 				$this->plugin->SetGlobalOption( 'site_content', $site_content ); // Save the option.
 			}
 		}
